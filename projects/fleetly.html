@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="eN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fleetly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <canvas id="dotGrid"></canvas>
+
+    <nav id="navbar">
+        <a href="../index.html#hero" class="nav-logo">
+            <img src="../assets/lambda.svg" alt="Lambda">
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Volver a Proyectos</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-detail-section">
+        <div class="container">
+
+            <header class="project-detail-header reveal">
+                <p class="section-label">Control de flotas</p>
+                <h1 class="project-detail-title">Fleetly</h1>
+
+                <div class="project-stack" style="margin-top: 1rem;">
+                    <span class="stack-tag">VUE</span>
+                    <span class="stack-tag">TypeScript</span>
+                    <span class="stack-tag">Laravel</span>
+                    <span class="stack-tag">PostgreSQL</span>
+                    <span class="stack-tag">Docker</span>
+                </div>
+            </header>
+
+            <article class="project-detail-body reveal">
+                <h3>Introducción y Propósito</h3>
+                <p>Fleetly es una solución integral B2B para la gestión de flotas vehiculares, diseñada para optimizar
+                    la operación y reducir costos en empresas que manejan múltiples vehículos. El proyecto busca
+                    proporcionar una plataforma intuitiva y eficiente para el seguimiento, mantenimiento y análisis de
+                    la flota.</p>
+            </article>
+
+            <div class="project-detail-media reveal">
+                <img src="../assets/fleetly/fleetly_main.jpeg" alt="Vista del proyecto" class="media-element">
+            </div>
+
+            <article class="project-detail-body reveal">
+                <h3>Arquitectura y Desafío Técnico</h3>
+                <p>
+                    El núcleo de Fleetly es su arquitectura <strong>Multi-Tenant (SaaS)</strong> con aislamiento de
+                    datos en <strong>PostgreSQL</strong>. El sistema utiliza un esquema
+                    dinámico para la gestión de clientes (tenants), suscripciones y dominios, mientras que cada empresa
+                    opera de forma aislada en su propio esquema independiente (<code>tenant_x</code>).
+                </p>
+                <p style="margin-top: 1rem;">
+                    El backend está construido sobre <strong>Laravel</strong> siguiendo un patrón <strong>MVC (
+                        Model-View-Controller)</strong>, localizando las migraciones y la lógica de negocio dentro de
+                    cada dominio (Vehículos, Reservas, Incidencias) para garantizar un sistema escalable y mantenible.
+                </p>
+            </article>
+
+            <article class="project-detail-body reveal">
+                <h3>Mi Contribución Especializada</h3>
+                <p>
+                    Como encargado del desarrollo de los roles de <strong>SuperAdmin (Global Admin)</strong> y
+                    <strong>Admin de Tenant</strong>, implementé módulos críticos para la administracion de la
+                    plataforma:
+                </p>
+                <ul>
+                    <li><strong>Panel Global (SuperAdmin):</strong> Creación del backend y frontend para la gestión de
+                        empresas (CRUD de Tenants), asignación de planes de suscripción, control de subdominios
+                        dinámicos y analíticas globales de la plataforma.</li>
+                    <li><strong>Control de Acceso y Permisos (RBAC):</strong> Integración de políticas de seguridad
+                        avanzadas y control de roles mediante herramientas robustas (Spatie), asegurando que el personal
+                        operativo (Workers) y los administradores gestionen recursos sin solapar privilegios.</li>
+                    <li><strong>Pasarela de Pagos y Facturación:</strong> Colaboración en el flujo de facturación
+                        automatizada y estructuración de tablas complejas para el procesamiento seguro de pagos mediante Stripe.</li>
+                </ul>
+            </article>
+
+            <article class="project-detail-body reveal">
+                <h3>Características de Ingeniería Destacadas</h3>
+                <ul>
+                    <li><strong>Aislamiento de Datos Dinámico:</strong> Enrutamiento automático de conexiones de bases
+                        de datos basado en el subdominio del cliente (ej. <code>acme.fleetly.com</code>).</li>
+                    <li><strong>Geofencing Avanzado:</strong> Implementación de perímetros y zonas restringidas nativas
+                        en base de datos mediante polígonos de PostgreSQL.</li>
+                    <li><strong>Modularidad en Frontend:</strong> SPA estructurada en Vue 3 y TypeScript orientada a
+                        dominios independientes, garantizando un código limpio y desacoplado.</li>
+                </ul>
+            </article>
+
+            <article class="project-detail-body reveal">
+                <h3>Conclusión</h3>
+
+                <p>Fue el proyecto de fin de grado que me toco desarrollar, cuenta con diversas caracteristicas
+                    muy utiles para una empresa necessitada de una aplicacion de control de flotas.</p>
+                <p>Entre las caracteristicas que se pueden encontrar en la aplicacion estan:</p>
+                <ul>
+                    <li>Control de vehículos, usuarios, reservas ...</li>
+                    <li>Seguimiento en tiempo real</li>
+                    <li>Reportes de incidencias</li>
+                    <li>Gestión de mantenimiento</li>
+                    <li>Alertas y notificaciones</li>
+                    <li>Estadísticas y métricas</li>
+                    <li>ChatBot por rol</li>
+                </ul>
+            </article>
+
+            <section class="detail-sub-section reveal project-actions">
+                <h3>¿Quieres ver el código?</h3>
+                <div class="action-buttons">
+                    <a href="https://github.com/SIMS-GRUP-4/sims-frontend" target="_blank" class="btn btn-primary">Ver
+                        Repositorio Frontend ↗
+                    </a>
+                    <a href="https://github.com/SIMS-GRUP-4/sims-backend" target="_blank" class="btn btn-primary">Ver
+                        Repositorio Backend ↗
+                    </a>
+                </div>
+            </section>
+        </div>
+
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
+        </div>
+        </section>
+
+        <script src="../script.js"></script>
+</body>
+
+</html>

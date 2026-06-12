@@ -3,7 +3,7 @@
     {
       "name": "Tu Portal Cliente",
       "description": "Web para la consulta y gestión de datos entre clientes de una asesoría y asesores.",
-      "url": "",
+      "url": "/projects/portalcliente.html",
       "date": "En progreso",
       "stack": [
         "Vue",
@@ -17,7 +17,7 @@
     {
       "name": "Fleetly",
       "description": "Aplicación de gestión de flotas de vehículos desarrollada como proyecto de final de grado.",
-      "url": "",
+      "url": "/projects/fleetly.html",
       "date": "Enero - Marzo 2026",
       "stack": [
         "Vue",
@@ -29,8 +29,8 @@
     },
     {
       "name": "Home Lab",
-      "description": "Llevaba tiempo queriendo montarme un servidor en casa donde alojar mis propios servicios y datos, así que un día decidí agarrar el antiguo PC donde jugaba a videojuegos e instalarle Ubuntu Server.",
-      "url": "",
+      "description": "Mi servidor casero donde alojar mis propios servicios y datos.",
+      "url": "/projects/homelab.html",
       "date": "Junio 2026",
       "stack": [
         "Pi-hole",
@@ -46,7 +46,7 @@
     {
       "name": "Otros ...",
       "description": "Durante mis años en el insituto estuve participando en varias hackatons de programacion donde ganaba recompensas que podian variar desde tecnologia, a viajes pagados a otros paises. Estos son algunos de esos proyectos.",
-      "url": ""
+      "url": "/projects/otros.html"
     }
   ]
 }

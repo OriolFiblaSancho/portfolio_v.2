@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto: Nombre del Proyecto · Oriol Fibla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <canvas id="dotGrid"></canvas>
+
+    <nav id="navbar">
+        <a href="../index.html#hero" class="nav-logo">
+            <img src="../assets/lambda.svg" alt="Lambda">
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Volver a Proyectos</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-detail-section">
+        <div class="container">
+            
+            <header class="project-detail-header reveal">
+                <p class="section-label"></p>
+                <h1 class="project-detail-title">Nombre del Proyecto</h1>
+                
+                <div class="project-stack" style="margin-top: 1rem;">
+                    <span class="stack-tag">HTML5</span>
+                    <span class="stack-tag">CSS3</span>
+                    <span class="stack-tag">JavaScript</span>
+                    <span class="stack-tag">Node.js</span>
+                </div>
+            </header>
+
+            <article class="project-detail-body reveal">
+                <h3>Introducción y Propósito</h3>
+                <p>Aquí va la introducción detallada de tu proyecto. Puedes explicar qué problema resolvía, el por qué decidiste construirlo (motivación personal, proyecto académico, freelance) y los mayores retos técnicos que superaste durante el desarrollo.</p>
+            </article>
+
+            <div class="project-detail-media reveal">
+                <img src="../assets/proyecto-mockup.png" alt="Vista previa del proyecto" class="media-element">
+                
+                </div>
+
+            <div class="project-optional-sections">
+                
+                <section class="detail-sub-section reveal">
+                    <h3>Manual de uso / Instrucciones</h3>
+                    <p>Sigue estos pasos para desplegar o interactuar con la aplicación:</p>
+                    <ol class="custom-list">
+                        <li>Clona el repositorio desde GitHub de forma local.</li>
+                        <li>Instala las dependencias ejecutando <code>npm install</code> en tu terminal.</li>
+                        <li>Configura las variables de entorno en el archivo <code>.env</code>.</li>
+                        <li>Inicia el servidor de desarrollo con <code>npm start</code>.</li>
+                    </ol>
+                </section>
+
+                <section class="detail-sub-section reveal project-actions">
+                    <h3>¿Quieres probarlo?</h3>
+                    <p>Puedes ver el código fuente completo o probar la aplicación en vivo a través de los siguientes enlaces:</p>
+                    <div class="action-buttons">
+                        <a href="https://tu-link-de-demo.com" target="_blank" class="btn btn-primary">Probar Aplicación ↗</a>
+                        <a href="https://github.com/OriolFiblaSancho" target="_blank" class="btn btn-ghost">Ver Repositorio</a>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
+        </div>
+    </section>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto: Nombre del Proyecto · Oriol Fibla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <canvas id="dotGrid"></canvas>
+
+    <nav id="navbar">
+        <a href="../index.html#hero" class="nav-logo">
+            <img src="../assets/lambda.svg" alt="Lambda">
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Volver a Proyectos</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-detail-section">
+        <div class="container">
+
+            <header class="project-detail-header reveal">
+                <h1 class="project-detail-title">Home Lab</h1>
+
+                <div class="project-stack" style="margin-top: 1rem;">
+                    <span class="stack-tag">Docker</span>
+                    <span class="stack-tag">Linux</span>
+                    <span class="stack-tag">Portainer</span>
+                    <span class="stack-tag">Pi-Hole</span>
+                    <span class="stack-tag">VaultGuarden</span>
+                    <span class="stack-tag">NextCloud</span>
+                    <span class="stack-tag">Dashy</span>
+                    <span class="stack-tag">Beszel</span>
+                    <span class="stack-tag">Cloudflare</span>
+                </div>
+            </header>
+
+            <article class="project-detail-body reveal">
+                <h3>Introducción y Propósito</h3>
+                <p>Decidi construir mi propio servidor casero para tener mayor control sobre mis datos y servicios,
+                    evitando depender de proveedores externos. He ido (y voy) añadiendo servicios y mejorando la
+                    infraestructura. Como norma personal intento que todos los servicios esten en contenedores Docker
+                    para facilitar su gestión y despliegue.</p>
+            </article>
+
+            <article class="project-detail-body reveal">
+                <h3>Servicios Implementados</h3>
+                <ul>
+                    <li><strong>Pi-hole:</strong> Sistema de filtrado de anuncios y protección contra malware.</li>
+                    <li><strong>Vaultwarden:</strong> Gestor de contraseñas autoalojado.</li>
+                    <li><strong>Nextcloud:</strong> Plataforma de almacenamiento y colaboración en la nube.</li>
+                    <li><strong>Dashy:</strong> Panel de control personalizado para acceder rápidamente a los servicios.
+                    </li>
+                    <li><strong>Beszel:</strong> Solución para el monitoreo y gestión de infraestructura.</li>
+                    <li><strong>Cloudflare:</strong> Servicio de protección contra ataques DDoS, optimización de
+                        rendimiento y tunneling.</li>
+                    <li><strong>Portainer:</strong> Interfaz de usuario para la gestión de contenedores Docker.</li>
+                </ul>
+            </article>
+
+            <div class="project-detail-media reveal">
+                <img src="../assets/homelab/homelab_dashy.png" alt="Vista de Dashy" class="media-element">
+            </div>
+
+            <div class="project-optional-sections">
+
+                <section class="detail-sub-section reveal project-actions">
+                    <h3>Pagina en construcción</h3>
+                    <img src="../assets/under_constr.gif" alt="">
+                </section>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
+        </div>
+        </section>
+
+        <script src="../script.js"></script>
+</body>
+
+</html>

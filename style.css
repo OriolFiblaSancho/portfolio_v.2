@@ -116,7 +116,7 @@ nav.scrolled {
 
 .hero-subtitle {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(0.8rem, 2vw, 3rem);
+    font-size: clamp(0.8rem, 1.25rem, 3rem);
     padding-left: 1rem;
     letter-spacing: 0.05em;
     color: var(--muted)
@@ -391,4 +391,164 @@ footer p {
     height: 100%;
     pointer-events: none;
     z-index: -1;
+}
+
+/* ─── Detalles de Proyecto Separado ─── */
+.project-detail-section {
+    padding-top: 8rem; /* Espacio extra para que no lo tape el navbar fijo */
+    padding-bottom: 6rem;
+}
+
+.project-detail-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text);
+}
+
+.project-detail-body {
+    margin: 3rem 0;
+}
+
+.project-detail-body h3, 
+.detail-sub-section h3,
+.project-detail-body-grid h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+/* Multimedia */
+.project-detail-media {
+    margin: 3rem 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.media-element {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Secciones secundarias e instrucciones */
+.detail-sub-section {
+    margin-bottom: 3.5rem;
+}
+
+.custom-list {
+    padding-left: 1.5rem;
+    color: var(--accent-dim);
+}
+
+.custom-list li {
+    margin-bottom: 0.5rem;
+}
+
+code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+/* Botones de acción del proyecto */
+.project-actions {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .action-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.project-detail-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.project-detail-body li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.85rem;
+    color: var(--accent-dim);
+}
+
+/* Checkmark minimalista usando código SVG en CSS */
+.project-detail-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23777777' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4.5 12.75l6 6 9-13.5' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.project-detail-body-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.project-detail-body-grid li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    color: var(--accent-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.project-detail-body-grid li:hover {
+    border-color: var(--muted);
+    color: var(--text);
+}
+
+.project-detail-body-grid li a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.project-detail-body-grid li a:hover {
+    color: var(--accent);
+}
+
+.project-detail-body-grid img {
+    width: 13rem;
+    object-fit: contain;
 }

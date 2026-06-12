@@ -27,7 +27,7 @@ async function loadProjects() {
         data.projects.forEach((project) => {
             // 1. Crear el contenedor principal (el enlace <a>)
             const projectCard = document.createElement('a');
-            // projectCard.href = project.url || '#';
+            projectCard.href = project.url || '#';
             projectCard.classList.add('project-card', 'reveal');
 
             // 2. Crear el div contenedor de la izquierda
@@ -184,21 +184,24 @@ function draw() {
 
 draw();
 
-document.getElementById('copyEmail').addEventListener('click', async () => {
-    const email = 'oriolfibla06@gmail.com';
-    const btn = document.getElementById('copyEmail');
-    try {
-        await navigator.clipboard.writeText(email);
-        btn.textContent = '✓ Copiado';
-        btn.style.background = '#2a2a2a';
-        btn.style.color = '#fff';
-        setTimeout(() => {
-            btn.textContent = email;
-            btn.style.background = '';
-            btn.style.color = '';
-        }, 2000);
-    } catch {
-        // Fallback para navegadores sin Clipboard API
-        window.prompt('Copia este email:', email);
-    }
-});
+// Busca esta sección al final de tu script.js y envuélvela en este "if"
+const copyEmailBtn = document.getElementById('copyEmail');
+
+if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async () => {
+        const email = 'oriolfibla06@gmail.com';
+        try {
+            await navigator.clipboard.writeText(email);
+            copyEmailBtn.textContent = '✓ Copiado';
+            copyEmailBtn.style.background = '#2a2a2a';
+            copyEmailBtn.style.color = '#fff';
+            setTimeout(() => {
+                copyEmailBtn.textContent = email;
+                copyEmailBtn.style.background = '';
+                copyEmailBtn.style.color = '';
+            }, 2000);
+        } catch {
+            window.prompt('Copia este email:', email);
+        }
+    });
+}
