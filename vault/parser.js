@@ -1,4 +1,6 @@
 const NOTES_JSON = './notes.json';
+const main = document.getElementById('main');
+const nav = document.getElementById('navbar');
 
 async function loadNotes() {
     try {
@@ -15,8 +17,6 @@ async function loadNotes() {
 }
 
 async function renderNote(note, btn) {
-
-    const main = document.getElementById('main');
     main.innerHTML = '<p class="loading">Cargando...</p>';
     console.log(`Cargando nota: ${note.title} (${note.content})`);
     try {
@@ -24,6 +24,16 @@ async function renderNote(note, btn) {
         if (!res.ok) throw new Error(`No se pudo cargar ${note.content} (${res.status})`);
         const mdText = await res.text();
         const htmlContent = marked.parse(mdText);
+
+        nav.innerHTML = `
+            <a href="../index.html#hero" class="nav-logo">
+                <img src="../assets/lambda.svg" alt="Lambda">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Volver</a></li>
+                <li><a href="#" id="back-to-vault">Vault</a></li>
+            </ul>
+        `;
 
         main.innerHTML = `
         <div class="note-meta" style="margin-top: 5rem;">
@@ -33,6 +43,11 @@ async function renderNote(note, btn) {
       `;
 
         main.scrollTop = 0;
+        document.getElementById('back-to-vault').addEventListener('click', async (e) => {
+            e.preventDefault();
+            await unRenderNote();
+        });
+
     } catch (err) {
         main.innerHTML = `
         <div class="error-msg">
@@ -40,6 +55,27 @@ async function renderNote(note, btn) {
           ${err.message}
         </div>`;
     }
+}
+
+async function unRenderNote() {
+    nav.innerHTML = `
+        <a href="../index.html#hero" class="nav-logo">
+            <img src="../assets/lambda.svg" alt="Lambda">
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html">Volver</a></li>
+        </ul>
+    `;
+    main.innerHTML = `
+        <section id="vault">
+            <div class="container">
+                <p class="section-label">Vault</p>
+                <h2 class="section-title">Apuntes y recursos</h2>
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+    `;
+    await init();
 }
 
 async function init() {
