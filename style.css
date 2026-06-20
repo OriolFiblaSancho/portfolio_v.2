@@ -657,3 +657,8 @@ code {
 .markdown-body em {
   color: #b0c4de;
 }
+
+.markdown-body a {
+  color: #1e90ff;
+  text-decoration: underline;
+}

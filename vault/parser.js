@@ -26,8 +26,8 @@ async function renderNote(note, btn) {
         const htmlContent = marked.parse(mdText);
 
         main.innerHTML = `
-        <div class="note-meta">
-          <span>${note.date}</span> · <span>${note.content}</span>
+        <div class="note-meta" style="margin-top: 5rem;">
+          <span>${note.date}</span>
         </div>
         <article class="markdown-body">${htmlContent}</article>
       `;
