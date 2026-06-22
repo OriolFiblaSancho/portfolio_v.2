@@ -11,19 +11,34 @@
             "source": ""
         },
         {
-            "sentence": "All is better with background music.",
-            "author": "Anonymous",
+            "sentence": "All is better with some background music.",
+            "author": "",
             "source": ""
         },
         {
             "sentence": "Stay present.",
-            "author": "Anonymous",
+            "author": "",
             "source": ""
         },
         {
             "sentence": "Strength before weakness.",
             "author": "Brandon Sanderson",
             "source": "The Way of Kings"
+        },
+        {
+            "sentence": "Actually, I can.",
+            "author": "",
+            "source": ""
+        },
+        {
+            "sentence": "Next year I'm going to be more insane, thats all I know.",
+            "author": "",
+            "source": ""
+        },
+        {
+            "sentence": "A museum of everything I have loved",
+            "author": "",
+            "source": ""
         }
     ]
 }
