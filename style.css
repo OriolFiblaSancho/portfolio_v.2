@@ -116,7 +116,7 @@ nav.scrolled {
 
 .hero-subtitle {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(0.8rem, 1.25rem, 3rem);
+    font-size: clamp(0.8rem, 1.2vw, 3rem);
     padding-left: 1rem;
     letter-spacing: 0.05em;
     color: var(--muted)
@@ -124,6 +124,34 @@ nav.scrolled {
 
 .hero-arrow {
     width: 5rem;
+}
+
+.hero-quote {
+    width: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--accent-dim);
+    max-width: 700px;
+    text-align: right;
+    margin-top: 3rem;
+    padding: 2rem 2rem;
+}
+
+.quote-sentence {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.quote-author {
+    font-style: italic;
+}
+
+.quote-source {
+    font-size: 1rem;
+    color: var(--muted);
 }
 
 .btn {
