@@ -207,11 +207,11 @@ if (copyEmailBtn) {
 }
 
 function loadQuote() {
-    const res = fetch('./sentences.json');
-    res.then(response => response.json())
+    fetch('sentences.json')
+        .then(response => response.json())
         .then(data => {
-            const randomIndex = Math.floor(Math.random() * data.length);
-            const quote = data[randomIndex];
+            const randomIndex = Math.floor(Math.random() * data.sentences.length);
+            const quote = data.sentences[randomIndex];
             document.getElementById('quoteSentence').textContent = quote.sentence;
             document.getElementById('quoteAuthor').textContent = quote.author;
             document.getElementById('quoteSource').textContent = quote.source;
