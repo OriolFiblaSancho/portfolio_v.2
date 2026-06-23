@@ -1,5 +1,8 @@
 // ─── Año automático ───
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearElement = document.getElementById('year');
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
 
 // ─── Listar proyectos en base a JSON ───
 const projects_grid = document.querySelector(".projects-grid");
@@ -116,22 +119,29 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 });
 
-const canvas = document.getElementById('dotGrid');
-const ctx = canvas.getContext('2d');
+const canvasBg = document.getElementById('dotGridBg');
+const canvasFg = document.getElementById('dotGridFg');
+const ctxBg = canvasBg.getContext('2d');
+const ctxFg = canvasFg.getContext('2d');
 
-const SPACING = 20;
-const RADIUS = 1;
-const MAX_DIST = 110;
-
-const LERP = 0.2;
+const SPACING = 13;
+const RADIUS = 0.8;
+const MAX_DIST = 80;
+const LERP = 0.1; 
 
 let target = { x: -9999, y: -9999 };
 let smooth = { x: -9999, y: -9999 };
 
 function resize() {
-    canvas.width = window.innerWidth * devicePixelRatio;
-    canvas.height = window.innerHeight * devicePixelRatio;
-    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+    const dpr = devicePixelRatio;
+    
+    canvasBg.width = window.innerWidth * dpr;
+    canvasBg.height = window.innerHeight * dpr;
+    ctxBg.setTransform(dpr, 0, 0, dpr, 0, 0);
+    
+    canvasFg.width = window.innerWidth * dpr;
+    canvasFg.height = window.innerHeight * dpr;
+    ctxFg.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 resize();
 window.addEventListener('resize', resize);
@@ -141,6 +151,7 @@ window.addEventListener('mousemove', e => {
     target.y = e.clientY;
     if (smooth.x < 0) { smooth.x = target.x; smooth.y = target.y; }
 });
+
 window.addEventListener('mouseleave', () => {
     target.x = -9999; target.y = -9999;
     smooth.x = -9999; smooth.y = -9999;
@@ -158,7 +169,9 @@ function draw() {
         smooth.y = lerp(smooth.y, target.y, LERP);
     }
 
-    ctx.clearRect(0, 0, W, H);
+    // Limpiamos AMBOS lienzos
+    ctxBg.clearRect(0, 0, W, H);
+    ctxFg.clearRect(0, 0, W, H);
 
     const offX = (W % SPACING) / 2;
     const offY = (H % SPACING) / 2;
@@ -169,16 +182,28 @@ function draw() {
         for (let c = 0; c < cols; c++) {
             const x = offX + c * SPACING;
             const y = offY + r * SPACING;
-            const dist = Math.hypot(x - smooth.x, y - smooth.y);
+            const dist = Math.hypot(x - smooth.x, y - smooth.y); 
             if (dist >= MAX_DIST) continue;
+            
             const alpha = easeOut(1 - dist / MAX_DIST) * 0.7;
-            ctx.beginPath();
-            ctx.arc(x, y, RADIUS, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255,255,255,${alpha.toFixed(3)})`;
-            ctx.fill();
+            ctxBg.beginPath();
+            ctxBg.arc(x, y, RADIUS, 0, Math.PI * 2);
+            ctxBg.fillStyle = `rgba(255,255,255,${alpha.toFixed(3)})`;
+            ctxBg.fill();
         }
     }
 
+    if (target.x > 0) {
+        ctxFg.save();
+            
+        ctxFg.beginPath();
+        ctxFg.arc(target.x, target.y, 4, 0, Math.PI * 2); 
+        ctxFg.fillStyle = 'rgba(255, 255, 255, 1)';
+        ctxFg.fill();
+        
+        ctxFg.restore();
+    }
+    
     requestAnimationFrame(draw);
 }
 
