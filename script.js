@@ -123,7 +123,7 @@ const SPACING = 20;
 const RADIUS = 1;
 const MAX_DIST = 110;
 
-const LERP = 0.09;
+const LERP = 0.2;
 
 let target = { x: -9999, y: -9999 };
 let smooth = { x: -9999, y: -9999 };
