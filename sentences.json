@@ -8,16 +8,11 @@
         {
             "sentence": "Study the old masters, enrich your palette, expand the canvas.",
             "author": "Martin Scorsese",
-            "source": ""
-        },
-        {
-            "sentence": "All is better with some background music.",
-            "author": "",
-            "source": ""
+            "source": "A Personal Journey with Martin Scorsese through American Movies"
         },
         {
             "sentence": "Stay present.",
-            "author": "",
+            "author": "Anon",
             "source": ""
         },
         {
@@ -27,18 +22,18 @@
         },
         {
             "sentence": "Actually, I can.",
-            "author": "",
+            "author": "Anon",
             "source": ""
         },
         {
             "sentence": "Next year I'm going to be more insane, thats all I know.",
-            "author": "",
+            "author": "Anon",
             "source": ""
         },
         {
-            "sentence": "A museum of everything I have loved",
-            "author": "",
-            "source": ""
+            "sentence": "I'm a museum of everything I have loved",
+            "author": "Eli Silvester",
+            "source": "Personal Essay"
         }
     ]
 }
