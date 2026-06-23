@@ -5,15 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=inter:300,400,500|space-grotesk:300,400,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <script src="./sentences.json"></script>
     <canvas id="dotGrid"></canvas>
     <nav id="navbar">
         <div style="gap: 2rem; display: flex; align-items: center;">
@@ -56,7 +54,7 @@
     <section id="projects">
         <div class="container">
             <p class="section-label reveal">Proyectos</p>
-            <h2 class="section-title reveal">Cosas que he estado haciendo</h2>
+            <h2 class="section-title reveal">Cosas que en las que he estado trabajando</h2>
             <div class="projects-grid"></div>
         </div>
     </section>
@@ -91,8 +89,8 @@
             <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
         </div>
     </footer>
-
     <script src="./script.js"></script>
+
 </body>
 
 </html>
