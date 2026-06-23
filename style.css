@@ -105,6 +105,13 @@ nav.scrolled {
     padding-top: 5rem;
 }
 
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 60vh;
+}
+
 .hero-name {
     font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(3.5rem, 9vw, 7rem);
@@ -127,17 +134,17 @@ nav.scrolled {
 }
 
 .hero-quote {
+    align-self: flex-end; 
+    text-align: right;
+    max-width: 600px;
+
     width: 100%;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(1rem, 1.2vw, 2rem);
+    font-size: clamp(0.8rem, 0.375rem + 0.6667vw, 1.125rem);    
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: var(--accent-dim);
-    max-width: 700px;
-    text-align: right;
-    margin-top: 3rem;
-    padding: 2rem 2rem;
 }
 
 .quote-sentence {
@@ -150,7 +157,7 @@ nav.scrolled {
 }
 
 .quote-source {
-    font-size: clamp(0.875rem, 1.2vw, 1.25rem);
+    font-size: clamp(0.5rem, 0.375rem + 0.6667vw, 1rem);    
     color: var(--muted);
 }
 
