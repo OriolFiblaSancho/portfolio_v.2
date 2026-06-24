@@ -287,7 +287,6 @@
             });
             if (!res.ok) throw new Error("Failed to fetch stats");
             const data = await res.json();
-            console.log(data);
             return data.items[0];
         }
 
@@ -331,7 +330,7 @@
         }
 
         updateStats();
-        setInterval(updateStats, 60_000);
+        setInterval(updateStats, 10_000);
     </script>
 </body>
 
