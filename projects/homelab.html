@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <canvas id="dotGrid"></canvas>
+    <canvas id="dotGridBg"></canvas>
+    <canvas id="dotGridFg"></canvas>
 
     <nav id="navbar">
         <a href="../index.html#hero" class="nav-logo">
@@ -34,62 +35,304 @@
                 <div class="project-stack" style="margin-top: 1rem;">
                     <span class="stack-tag">Docker</span>
                     <span class="stack-tag">Linux</span>
-                    <span class="stack-tag">Portainer</span>
-                    <span class="stack-tag">Pi-Hole</span>
-                    <span class="stack-tag">VaultGuarden</span>
-                    <span class="stack-tag">NextCloud</span>
-                    <span class="stack-tag">Dashy</span>
-                    <span class="stack-tag">Beszel</span>
                     <span class="stack-tag">Cloudflare</span>
                 </div>
             </header>
 
             <article class="project-detail-body reveal">
                 <h3>Introducción y Propósito</h3>
-                <p>Decidi construir mi propio servidor casero para tener mayor control sobre mis datos y servicios,
+                <p>
+                    Decidi construir mi propio servidor casero para tener mayor control sobre mis datos y servicios,
                     evitando depender de proveedores externos. He ido (y voy) añadiendo servicios y mejorando la
                     infraestructura. Como norma personal intento que todos los servicios esten en contenedores Docker
-                    para facilitar su gestión y despliegue.</p>
+                    para facilitar su gestión y despliegue.
+                </p>
             </article>
 
             <article class="project-detail-body reveal">
                 <h3>Servicios Implementados</h3>
-                <ul>
-                    <li><strong>Pi-hole:</strong> Sistema de filtrado de anuncios y protección contra malware.</li>
-                    <li><strong>Vaultwarden:</strong> Gestor de contraseñas autoalojado.</li>
-                    <li><strong>Nextcloud:</strong> Plataforma de almacenamiento y colaboración en la nube.</li>
-                    <li><strong>Dashy:</strong> Panel de control personalizado para acceder rápidamente a los servicios.
-                    </li>
-                    <li><strong>Beszel:</strong> Solución para el monitoreo y gestión de infraestructura.</li>
-                    <li><strong>Cloudflare:</strong> Servicio de protección contra ataques DDoS, optimización de
-                        rendimiento y tunneling.</li>
-                    <li><strong>Portainer:</strong> Interfaz de usuario para la gestión de contenedores Docker.</li>
-                </ul>
+                <div class="reveal"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/dashy.png" alt="Dashy Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>Dashy</h4>
+                        </div>
+                        <p>Panel de control para acceder a todos los servicios y recursos del servidor.</p>
+                    </div>
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/nextcloud.svg" alt="Nextcloud Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>Nextcloud</h4>
+                        </div>
+                        <p>Almacenamiento en la nube para mis archivos, con sincronización y acceso remoto.</p>
+                    </div>
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/vaultwarden-light.svg" alt="Vaultwarden Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>Vaultwarden</h4>
+                        </div>
+                        <p>Gestor de contraseñas autoalojado, muy similar a Bitwarden, de hecho es un fork de este.</p>
+                    </div>
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/pi-hole.svg" alt="Pi-hole Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>Pi-hole</h4>
+                        </div>
+                        <p>Bloqueador de anuncios y rastreadores a nivel de red.</p>
+                    </div>
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/portainer-dark.svg" alt="Portainer Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>Portainer</h4>
+                        </div>
+                        <p>Panel de control para gestionar contenedores Docker.</p>
+                    </div>
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/zerobyte.png" alt="ZeroByte Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>ZeroByte</h4>
+                        </div>
+                        <p>Gestor de backups. Sencillo de configurar y me gusta su interfaz.</p>
+                    </div>
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/calibre-web.svg" alt="Calibre Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>Calibre</h4>
+                        </div>
+                        <p>Gestor de biblioteca digital para mi y mis amigos. Ahora mismo con alrededor de 150.000
+                            libros.</p>
+                    </div>
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/qbittorrent.svg" alt="QbitTorrent Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>QbitTorrent</h4>
+                        </div>
+                        <p>Cliente de torrents. Principalmente para descargar los libros de la biblioteca.</p>
+                    </div>
+                    <div class="reveal"
+                        style="background-color: var(--surface); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                        <div
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                            <img src="../assets/homelab/services_icons/beszel-light.svg" alt="Beszel Logo"
+                                style="width: 40px; height: 40px;">
+                            <h4>Beszel</h4>
+                        </div>
+                        <p>Panel de monitoreo de sistemas. Muy util para saber el estado de mi servidor.</p>
+                    </div>
+                </div>
             </article>
 
-            <div class="project-detail-media reveal">
-                <img src="../assets/homelab/homelab_dashy.png" alt="Vista de Dashy" class="media-element">
-            </div>
-
             <div class="project-optional-sections">
-
                 <section class="detail-sub-section reveal project-actions">
-                    <h3>Pagina en construcción</h3>
-                    <img src="../assets/under_constr.gif" alt="">
+                    <h3>Hardware</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div
+                            style="background-color: var(--faint); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="size-4" style="width: 20px; height: 20px;">
+                                <path d="M6 6v4h4V6H6Z" />
+                                <path fill-rule="evenodd"
+                                    d="M5.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3a2 2 0 0 0 2 2v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13a2 2 0 0 0 2-2h1.25a.75.75 0 0 0 0-1.5H13v-.75h1.25a.75.75 0 0 0 0-1.5H13V6.5h1.25a.75.75 0 0 0 0-1.5H13a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-.75V1.75a.75.75 0 0 0-1.5 0V3H6.5V1.75A.75.75 0 0 0 5.75 1ZM11 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h6Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p style="font-size: 0.8rem;">CPU</p>
+
+                            <h4>Ryzen 5</h4>
+                            <p style="font-size: 0.8rem;">5500 · 6c & 12th</p>
+                        </div>
+                        <div
+                            style="background-color: var(--faint); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="#e3e3e3">
+                                <path
+                                    d="M264-384h72v-192h-72v192Zm180 0h72v-192h-72v192Zm180 0h72v-192h-72v192Zm-456 96h624v-384H168v384Zm0 0v-384 384Zm48 144v-72h-48q-29.7 0-50.85-21.15Q96-258.3 96-288v-384q0-29.7 21.15-50.85Q138.3-744 168-744h48v-72h72v72h156v-72h72v72h132v-72h72v72h72q29.7 0 50.85 21.15Q864-701.7 864-672v384q0 29.7-21.15 50.85Q821.7-216 792-216h-72v72h-72v-72H516v72h-72v-72H288v72h-72Z" />
+                            </svg>
+                            <p style="font-size: 0.8rem;">RAM</p>
+
+                            <h4>24GB</h4>
+                            <p style="font-size: 0.8rem;">DDR4</p>
+                        </div>
+                        <div
+                            style="background-color: var(--faint); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="size-4" style="width: 20px; height: 20px;">
+                                <path d="M8 7c3.314 0 6-1.343 6-3s-2.686-3-6-3-6 1.343-6 3 2.686 3 6 3Z" />
+                                <path
+                                    d="M8 8.5c1.84 0 3.579-.37 4.914-1.037A6.33 6.33 0 0 0 14 6.78V8c0 1.657-2.686 3-6 3S2 9.657 2 8V6.78c.346.273.72.5 1.087.683C4.42 8.131 6.16 8.5 8 8.5Z" />
+                                <path
+                                    d="M8 12.5c1.84 0 3.579-.37 4.914-1.037.366-.183.74-.41 1.086-.684V12c0 1.657-2.686 3-6 3s-6-1.343-6-3v-1.22c.346.273.72.5 1.087.683C4.42 12.131 6.16 12.5 8 12.5Z" />
+                            </svg>
+
+                            <p style="font-size: 0.8rem;">Storage</p>
+
+                            <h4>2.25 TB</h4>
+                            <p style="font-size: 0.8rem;">2 TB HDD · 256 GB SSD</p>
+                        </div>
+                    </div>
+                    <!-- 
+    Bloque de Server Stats — pégalo donde quieras en la página del homelab.
+    Requiere homelab-stats.js al final del body.
+-->
+
+                    <article class="project-detail-body reveal">
+                        <h3>Estado del Servidor</h3>
+
+                        <div class="server-stats-grid">
+
+                            <div class="server-stat-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    style="width:1.1rem;height:1.1rem;color:var(--muted)">
+                                    <path d="M6 6v4h4V6H6Z" />
+                                    <path fill-rule="evenodd"
+                                        d="M5.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3a2 2 0 0 0 2 2v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13a2 2 0 0 0 2-2h1.25a.75.75 0 0 0 0-1.5H13v-.75h1.25a.75.75 0 0 0 0-1.5H13V6.5h1.25a.75.75 0 0 0 0-1.5H13a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-.75V1.75a.75.75 0 0 0-1.5 0V3H6.5V1.75A.75.75 0 0 0 5.75 1ZM11 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h6Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="server-stat-label">CPU</span>
+                                <span class="server-stat-value" id="stat-cpu">—</span>
+                            </div>
+
+                            <div class="server-stat-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    style="width:1.1rem;height:1.1rem;color:var(--muted)">
+                                    <path
+                                        d="M3 2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3ZM2 9a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9ZM3 7.25a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5H3ZM3 3.25a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5H3ZM6.75 7.25a.75.75 0 0 0 0 1.5H10a.75.75 0 0 0 0-1.5H6.75ZM6 3.75A.75.75 0 0 1 6.75 3H10a.75.75 0 0 1 0 1.5H6.75A.75.75 0 0 1 6 3.75Z" />
+                                    <path
+                                        d="M2 12a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1ZM3 11.25a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5H3ZM6.75 11.25a.75.75 0 0 0 0 1.5H10a.75.75 0 0 0 0-1.5H6.75Z" />
+                                </svg>
+                                <span class="server-stat-label">RAM</span>
+                                <span class="server-stat-value" id="stat-ram">—</span>
+                            </div>
+
+                            <div class="server-stat-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    style="width:1.1rem;height:1.1rem;color:var(--muted)">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Zm7.75-4.25a.75.75 0 0 0-1.5 0V8c0 .414.336.75.75.75h3.25a.75.75 0 0 0 0-1.5h-2.5v-3.5Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="server-stat-label">Uptime</span>
+                                <span class="server-stat-value" id="stat-uptime">—</span>
+                            </div>
+
+                            <div class="server-stat-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                    style="width:1.1rem;height:1.1rem;color:var(--muted)">
+                                    <path fill-rule="evenodd"
+                                        d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L8 11.773l-3.136 2.22a.75.75 0 0 1-1.12-.814l.853-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="server-stat-label">Estado</span>
+                                <span class="server-stat-value">
+                                    <span id="stat-status" class="server-status-badge">—</span>
+                                </span>
+                            </div>
+
+                        </div>
+                    </article>
                 </section>
-
             </div>
-
         </div>
     </section>
-
     <footer>
         <div class="container">
             <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
         </div>
-        </section>
+    </footer>
+    <script src="../script.js"></script>
 
-        <script src="../script.js"></script>
+    <script>
+        const BESZEL_URL = "https://beszel.orifibla.dev";
+        const BESZEL_USER = "user@user.com";
+        const BESZEL_PASS = "password";
+
+        async function getToken() {
+            const res = await fetch(`${BESZEL_URL}/api/collections/users/auth-with-password`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ identity: BESZEL_USER, password: BESZEL_PASS }),
+            });
+            if (!res.ok) throw new Error("Auth failed");
+            const data = await res.json();
+            return data.token;
+        }
+
+        async function getStats(token) {
+            const res = await fetch(`${BESZEL_URL}/api/collections/systems/records?perPage=1`, {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+            if (!res.ok) throw new Error("Failed to fetch stats");
+            const data = await res.json();
+            console.log(data);
+            return data.items[0];
+        }
+
+        function formatUptime(seconds) {
+            const d = Math.floor(seconds / 86400);
+            const h = Math.floor((seconds % 86400) / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            if (d > 0) return `${d}d ${h}h`;
+            if (h > 0) return `${h}h ${m}m`;
+            return `${m}m`;
+        }
+
+        async function updateStats() {
+            const elCpu = document.getElementById("stat-cpu");
+            const elRam = document.getElementById("stat-ram");
+            const elUptime = document.getElementById("stat-uptime");
+            const elStatus = document.getElementById("stat-status");
+
+            if (!elCpu) return;
+
+            try {
+                const token = await getToken();
+                const system = await getStats(token);
+
+                elCpu.textContent = `${system.info.cpu.toFixed(1)}%`;
+                elRam.textContent = `${system.info.mp.toFixed(1)}%`;
+                elUptime.textContent = formatUptime(system.info.u);
+
+                if (elStatus) {
+                    elStatus.textContent = "online";
+                    elStatus.dataset.status = "up";
+                }
+
+            } catch (err) {
+                console.warn("Beszel unavailable:", err.message);
+                if (elStatus) {
+                    elStatus.textContent = "offline";
+                    elStatus.dataset.status = "down";
+                }
+            }
+        }
+
+        updateStats();
+        setInterval(updateStats, 60_000);
+    </script>
 </body>
 
 </html>
