@@ -1,6 +1,5 @@
 const NOTES_JSON = './notes.json';
 const main = document.getElementById('main');
-const nav = document.getElementById('navbar');
 
 async function loadNotes() {
   try {
@@ -23,15 +22,7 @@ async function renderNote(note, btn) {
     const mdText = await res.text();
     const htmlContent = marked.parse(mdText);
 
-    nav.innerHTML = `
-      <a href="../index.html#hero" class="flex items-center w-6">
-        <img src="../assets/lambda.svg" alt="Lambda">
-      </a>
-      <ul class="flex gap-8 list-none">
-        <li><a href="../index.html" class="text-muted no-underline text-sm hover:text-white transition-colors duration-200">Volver</a></li>
-        <li><a href="#" id="back-to-vault" class="text-muted no-underline text-sm hover:text-white transition-colors duration-200">Vault</a></li>
-      </ul>
-    `;
+    rebuildNav([{ href: '#', text: 'Vault', id: 'back-to-vault' }]);
 
     main.innerHTML = `
       <div class="mt-20 text-muted text-sm">${note.date}</div>
@@ -54,14 +45,7 @@ async function renderNote(note, btn) {
 }
 
 async function unRenderNote() {
-  nav.innerHTML = `
-    <a href="../index.html#hero" class="flex items-center w-6">
-      <img src="../assets/lambda.svg" alt="Lambda">
-    </a>
-    <ul class="flex gap-8 list-none">
-      <li><a href="../index.html" class="text-muted no-underline text-sm hover:text-white transition-colors duration-200">Volver</a></li>
-    </ul>
-  `;
+  rebuildNav();
   main.innerHTML = `
     <section id="vault" class="py-24">
       <div class="max-w-[860px] mx-auto">

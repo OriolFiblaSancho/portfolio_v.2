@@ -10,7 +10,7 @@ No build tools, no dev server. Edit files, open in browser. Deploy by pushing to
 
 - **Tailwind CSS** via CDN (`cdn.tailwindcss.com`) — configured inline in each HTML `<head>` with custom colors (`surface`, `border`, `accent-dim`, `muted`, `faint`) and fonts (`font-space`, `font-inter`)
 - **marked.js** via CDN (`cdn.jsdelivr.net/npm/marked/marked.min.js`) — renders markdown notes in vault
-- Fonts via `fonts.bunny.net` (Inter, Space Grotesk) and `fonts.googleapis.com` as fallback
+- Fonts via `fonts.bunny.net` (Inter, Space Grotesk)
 
 ## Key structure
 
@@ -20,7 +20,8 @@ No build tools, no dev server. Edit files, open in browser. Deploy by pushing to
 - `vault/notes.json` — registry of available notes (title, path, date)
 - `vault/parser.js` — fetches notes JSON and renders markdown content
 - `style.css` — only what Tailwind CDN cannot express (cursor rules, canvas positioning, scroll reveal, markdown-body, project checkmarks, `prefers-reduced-motion`)
-- `script.js` — dot grid animation, scroll reveal, project card generation, nav scroll state, email copy, quote loader
+- `script.js` — project card generation, email copy, quote loader
+- `shared.js` — canvas injection, nav build via `rebuildNav()`, year auto-update, scroll border, smooth scroll, reveal observer, dot grid animation
 
 ## Notable quirks
 
@@ -28,5 +29,8 @@ No build tools, no dev server. Edit files, open in browser. Deploy by pushing to
 - Dot grid uses two layered canvases (`#dotGridBg` z-index: -1, `#dotGridFg` z-index: 99999)
 - Nav border toggled via `.navbar-scrolled` class (JS adds on scroll > 20px)
 - Project cards built dynamically by JS — uses Tailwind classes for styling, `.project-card` class retained for `::before` hover overlay
+- `rebuildNav(extraLinks)` in `shared.js` rebuilds the nav from `window.__navLinks` + optional extra links — `parser.js` uses it to add a temporary "Vault" back button when viewing a note
+- `window.__navLinks` is declared in each page before loading `shared.js` — array of `{href, text, download?, id?}`
+- Every HTML page must include: `<link rel="icon" href="../favicon.ico">` (or `favicon.ico` at root), `<meta name="description">`, and the bunny.net font link
 - Tailwind config is duplicated in every HTML file — keep it consistent
 - `CNAME` file controls the GitHub Pages custom domain — do not delete
