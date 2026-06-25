@@ -25,6 +25,9 @@
         "Laravel",
         "PostgreSQL",
         "Docker"
+      ],
+      "media": [
+        "assets/projects_videos/fleetly_admin.mp4"
       ]
     },
     {

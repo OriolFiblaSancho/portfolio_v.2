@@ -10,8 +10,8 @@ async function loadProjects() {
 
     /* Layout fijo por índice: portalcliente featured, fleetly half, homelab+otros squares apilados */
     const bentoConfigs = [
-      { cols: 'sm:col-span-3 sm:row-span-2', compact: false, minimal: false, pad: '' },
-      { cols: 'sm:col-span-2 sm:row-span-2', compact: true, minimal: false, pad: '' },
+      { cols: 'sm:col-span-3 sm:row-span-2', compact: false, minimal: false, pad: '', mediaBelow: false },
+      { cols: 'sm:col-span-2 sm:row-span-2', compact: true, minimal: false, pad: '', mediaBelow: true },
       { cols: 'sm:col-span-1', compact: false, minimal: true },
       { cols: 'sm:col-span-1', compact: false, minimal: true },
     ];
@@ -39,54 +39,137 @@ async function loadProjects() {
         }
       /* Cards grandes (Portal Cliente, Fleetly): contenido completo */
       } else {
-        card.className += ` ${cfg.pad || 'p-10'} grid grid-cols-[1fr_auto] gap-5 items-start ${cfg.compact ? 'gap-3' : ''}`;
+        const hasMedia = project.media && Array.isArray(project.media) && project.media.length > 0;
 
-        const mainContent = document.createElement('div');
+        /* Layout vertical con media abajo (Fleetly) */
+        if (hasMedia && cfg.mediaBelow) {
+          card.className += ` ${cfg.pad || 'p-10'} flex flex-col gap-4`;
 
-        const projectHeader = document.createElement('div');
-        projectHeader.className = 'flex items-center gap-3 mb-3';
+          const topRow = document.createElement('div');
+          topRow.className = 'grid grid-cols-[1fr_auto] items-start gap-3';
 
-        const projectDot = document.createElement('div');
-        projectDot.className = 'w-2 h-2 rounded-full bg-white shrink-0';
+          const mainContent = document.createElement('div');
 
-        const projectName = document.createElement('span');
-        projectName.className = 'font-space text-lg font-semibold tracking-[-0.01em]';
-        projectName.textContent = project.name;
-        projectHeader.appendChild(projectDot);
-        projectHeader.appendChild(projectName);
+          const projectHeader = document.createElement('div');
+          projectHeader.className = 'flex items-center gap-3 mb-3';
+          const projectDot = document.createElement('div');
+          projectDot.className = 'w-2 h-2 rounded-full bg-white shrink-0';
+          const projectName = document.createElement('span');
+          projectName.className = 'font-space text-lg font-semibold tracking-[-0.01em]';
+          projectName.textContent = project.name;
+          projectHeader.appendChild(projectDot);
+          projectHeader.appendChild(projectName);
+          const projectDate = document.createElement('span');
+          projectDate.className = 'text-muted';
+          projectDate.textContent = project.date;
+          projectHeader.appendChild(projectDate);
 
-        const projectDate = document.createElement('span');
-        projectDate.className = 'text-muted';
-        projectDate.textContent = project.date;
-        projectHeader.appendChild(projectDate);
+          const projectDesc = document.createElement('p');
+          projectDesc.className = 'text-muted text-sm leading-relaxed mb-5';
+          projectDesc.textContent = project.description;
 
-        const projectDesc = document.createElement('p');
-        projectDesc.className = 'text-muted text-sm leading-relaxed mb-5';
-        projectDesc.textContent = project.description;
+          const projectStack = document.createElement('div');
+          projectStack.className = 'flex flex-wrap gap-1';
+          if (project.stack && Array.isArray(project.stack)) {
+            project.stack.forEach(tech => {
+              const stackTag = document.createElement('span');
+              stackTag.className = 'text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full';
+              stackTag.textContent = tech;
+              projectStack.appendChild(stackTag);
+            });
+          }
 
-        const projectStack = document.createElement('div');
-        projectStack.className = 'flex flex-wrap gap-1';
+          mainContent.appendChild(projectHeader);
+          mainContent.appendChild(projectDesc);
+          mainContent.appendChild(projectStack);
 
-        if (project.stack && Array.isArray(project.stack)) {
-          project.stack.forEach(tech => {
-            const stackTag = document.createElement('span');
-            stackTag.className = 'text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full';
-            stackTag.textContent = tech;
-            projectStack.appendChild(stackTag);
-          });
+          const projectArrow = document.createElement('span');
+          projectArrow.className = 'text-faint group-hover:text-white transition-colors duration-200';
+          projectArrow.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-[3px] group-hover:-translate-y-[3px]"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>`;
+
+          topRow.appendChild(mainContent);
+          topRow.appendChild(projectArrow);
+          card.appendChild(topRow);
+
+          const wrapper = document.createElement('div');
+          wrapper.className = 'rounded-[8px] overflow-hidden border border-border';
+          const video = document.createElement('video');
+          video.src = project.media[0];
+          video.autoplay = true;
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.className = 'w-full h-auto block';
+          wrapper.appendChild(video);
+          card.appendChild(wrapper);
+
+        } else {
+          card.className += ` ${cfg.pad || 'p-10'} grid items-start ${cfg.compact ? 'gap-3' : 'gap-5'} ${hasMedia ? 'grid-cols-[1fr_1.5fr]' : 'grid-cols-[1fr_auto]'}`;
+
+          const mainContent = document.createElement('div');
+
+          const projectHeader = document.createElement('div');
+          projectHeader.className = 'flex items-center gap-3 mb-3';
+
+          const projectDot = document.createElement('div');
+          projectDot.className = 'w-2 h-2 rounded-full bg-white shrink-0';
+
+          const projectName = document.createElement('span');
+          projectName.className = 'font-space text-lg font-semibold tracking-[-0.01em]';
+          projectName.textContent = project.name;
+          projectHeader.appendChild(projectDot);
+          projectHeader.appendChild(projectName);
+
+          const projectDate = document.createElement('span');
+          projectDate.className = 'text-muted';
+          projectDate.textContent = project.date;
+          projectHeader.appendChild(projectDate);
+
+          const projectDesc = document.createElement('p');
+          projectDesc.className = 'text-muted text-sm leading-relaxed mb-5';
+          projectDesc.textContent = project.description;
+
+          const projectStack = document.createElement('div');
+          projectStack.className = 'flex flex-wrap gap-1';
+
+          if (project.stack && Array.isArray(project.stack)) {
+            project.stack.forEach(tech => {
+              const stackTag = document.createElement('span');
+              stackTag.className = 'text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full';
+              stackTag.textContent = tech;
+              projectStack.appendChild(stackTag);
+            });
+          }
+
+          mainContent.appendChild(projectHeader);
+          mainContent.appendChild(projectDesc);
+          mainContent.appendChild(projectStack);
+
+          const projectArrow = document.createElement('span');
+          projectArrow.className = 'text-faint group-hover:text-white transition-colors duration-200';
+          projectArrow.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-[3px] group-hover:-translate-y-[3px]"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>`;
+
+          card.appendChild(mainContent);
+
+          if (hasMedia) {
+            const mediaCol = document.createElement('div');
+            mediaCol.className = 'flex items-start h-full';
+            const wrapper = document.createElement('div');
+            wrapper.className = 'rounded-[8px] overflow-hidden border border-border w-full';
+            const video = document.createElement('video');
+            video.src = project.media[0];
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.className = 'w-full h-auto block';
+            wrapper.appendChild(video);
+            mediaCol.appendChild(wrapper);
+            card.appendChild(mediaCol);
+          } else {
+            card.appendChild(projectArrow);
+          }
         }
-
-        mainContent.appendChild(projectHeader);
-        mainContent.appendChild(projectDesc);
-        mainContent.appendChild(projectStack);
-
-        /* Flecha diagonal que se mueve en hover */
-        const projectArrow = document.createElement('span');
-        projectArrow.className = 'text-faint group-hover:text-white transition-colors duration-200';
-        projectArrow.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-[3px] group-hover:-translate-y-[3px]"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>`;
-
-        card.appendChild(mainContent);
-        card.appendChild(projectArrow);
       }
 
       projects_grid.appendChild(card);
