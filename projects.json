@@ -33,14 +33,9 @@
       "url": "/projects/homelab.html",
       "date": "Junio 2026",
       "stack": [
-        "Pi-hole",
-        "Vaultwarden",
-        "Nextcloud",
-        "Dashy",
-        "Beszel",
-        "Portainer",
         "Cloudflare",
-        "Docker"
+        "Docker",
+        "Linux"
       ]
     },
     {
