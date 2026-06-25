@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +8,8 @@
   <title>Home Lab · Oriol Fibla</title>
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=inter:300,400,500|space-grotesk:300,400,500,600,700" rel="stylesheet" />
+  <link href="https://fonts.bunny.net/css?family=inter:300,400,500|space-grotesk:300,400,500,600,700"
+    rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,46 +32,59 @@
   </script>
   <link rel="stylesheet" href="../style.css">
 </head>
+
 <body class="bg-black text-white">
   <section class="pt-32 pb-24">
     <div class="max-w-[860px] mx-auto px-8">
       <header class="reveal">
-        <h1 class="font-space text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-[-0.03em] leading-tight text-white">Home Lab</h1>
+        <h1 class="font-space text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-[-0.03em] leading-tight text-white">
+          Home Lab</h1>
         <div class="flex flex-wrap gap-1 mt-4">
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Docker</span>
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Linux</span>
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Cloudflare</span>
+          <span
+            class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Docker</span>
+          <span
+            class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Linux</span>
+          <span
+            class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Cloudflare</span>
         </div>
       </header>
 
       <article class="project-detail-body reveal mt-12">
-        <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Introducción y Propósito</h3>
-        <p class="leading-relaxed mb-5 text-accent-dim">Decidí montar mi propio servidor para dejar de depender de servicios en la nube que no controlo. Empecé con lo básico: Poder guardar archivos en local, bloquear anuncios a nivel de red y tener mis contraseñas seguras y fui añadiendo capas hasta llegar al setup actual.</p>
+        <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Introducción y
+          Propósito</h3>
+        <p class="leading-relaxed mb-5 text-accent-dim">Decidí montar mi propio servidor para dejar de depender de
+          servicios en la nube que no controlo. Empecé con lo básico: Poder guardar archivos en local, bloquear anuncios
+          a nivel de red y tener mis contraseñas seguras y fui añadiendo capas hasta llegar al setup actual.</p>
       </article>
 
       <article class="project-detail-body reveal my-12">
-        <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Servicios Implementados (24/06/26)</h3>
+        <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Servicios
+          Implementados (24/06/26)</h3>
         <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 reveal">
           <div class="bg-surface p-4 rounded-lg reveal">
             <div class="flex items-center gap-2 mb-1">
               <img src="../assets/homelab/services_icons/dashy.png" alt="Dashy Logo" class="w-10 h-10">
               <h4 class="font-space text-white font-semibold">Dashy</h4>
             </div>
-            <p class="text-accent-dim text-sm">Panel de control para acceder a todos los servicios y recursos del servidor.</p>
+            <p class="text-accent-dim text-sm">Panel de control para acceder a todos los servicios y recursos del
+              servidor.</p>
           </div>
           <div class="bg-surface p-4 rounded-lg reveal">
             <div class="flex items-center gap-2 mb-1">
               <img src="../assets/homelab/services_icons/nextcloud.svg" alt="Nextcloud Logo" class="w-10 h-10">
               <h4 class="font-space text-white font-semibold">Nextcloud</h4>
             </div>
-            <p class="text-accent-dim text-sm">Almacenamiento en la nube para mis archivos, con sincronización y acceso remoto.</p>
+            <p class="text-accent-dim text-sm">Almacenamiento en la nube para mis archivos, con sincronización y acceso
+              remoto.</p>
           </div>
           <div class="bg-surface p-4 rounded-lg reveal">
             <div class="flex items-center gap-2 mb-1">
-              <img src="../assets/homelab/services_icons/vaultwarden-light.svg" alt="Vaultwarden Logo" class="w-10 h-10">
+              <img src="../assets/homelab/services_icons/vaultwarden-light.svg" alt="Vaultwarden Logo"
+                class="w-10 h-10">
               <h4 class="font-space text-white font-semibold">Vaultwarden</h4>
             </div>
-            <p class="text-accent-dim text-sm">Gestor de contraseñas autoalojado, muy similar a Bitwarden, de hecho es un fork de este.</p>
+            <p class="text-accent-dim text-sm">Gestor de contraseñas autoalojado, muy similar a Bitwarden, de hecho es
+              un fork de este.</p>
           </div>
           <div class="bg-surface p-4 rounded-lg reveal">
             <div class="flex items-center gap-2 mb-1">
@@ -97,21 +112,24 @@
               <img src="../assets/homelab/services_icons/calibre-web.svg" alt="Calibre Logo" class="w-10 h-10">
               <h4 class="font-space text-white font-semibold">Calibre</h4>
             </div>
-            <p class="text-accent-dim text-sm">Gestor de biblioteca digital para mi y mis amigos. Ahora mismo con alrededor de 150.000 libros.</p>
+            <p class="text-accent-dim text-sm">Gestor de biblioteca digital para mi y mis amigos. Ahora mismo con
+              alrededor de 150.000 libros.</p>
           </div>
           <div class="bg-surface p-4 rounded-lg reveal">
             <div class="flex items-center gap-2 mb-1">
               <img src="../assets/homelab/services_icons/qbittorrent.svg" alt="QbitTorrent Logo" class="w-10 h-10">
               <h4 class="font-space text-white font-semibold">QbitTorrent</h4>
             </div>
-            <p class="text-accent-dim text-sm">Cliente de torrents. Principalmente para descargar los libros de la biblioteca.</p>
+            <p class="text-accent-dim text-sm">Cliente de torrents. Principalmente para descargar los libros de la
+              biblioteca.</p>
           </div>
           <div class="bg-surface p-4 rounded-lg reveal">
             <div class="flex items-center gap-2 mb-1">
               <img src="../assets/homelab/services_icons/beszel-light.svg" alt="Beszel Logo" class="w-10 h-10">
               <h4 class="font-space text-white font-semibold">Beszel</h4>
             </div>
-            <p class="text-accent-dim text-sm">Panel de monitoreo de sistemas. Muy util para saber el estado de mi servidor.</p>
+            <p class="text-accent-dim text-sm">Panel de monitoreo de sistemas. Muy util para saber el estado de mi
+              servidor.</p>
           </div>
         </div>
       </article>
@@ -121,67 +139,94 @@
           <h3 class="font-space text-2xl font-semibold mb-4 text-white">Hardware</h3>
           <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
             <div class="bg-faint p-4 rounded-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-5 h-5 text-muted mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                class="w-5 h-5 text-accent-dim mb-2">
                 <path d="M6 6v4h4V6H6Z" />
-                <path fill-rule="evenodd" d="M5.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3a2 2 0 0 0 2 2v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13a2 2 0 0 0 2-2h1.25a.75.75 0 0 0 0-1.5H13v-.75h1.25a.75.75 0 0 0 0-1.5H13V6.5h1.25a.75.75 0 0 0 0-1.5H13a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-.75V1.75a.75.75 0 0 0-1.5 0V3H6.5V1.75A.75.75 0 0 0 5.75 1ZM11 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h6Z" clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                  d="M5.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3a2 2 0 0 0 2 2v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13a2 2 0 0 0 2-2h1.25a.75.75 0 0 0 0-1.5H13v-.75h1.25a.75.75 0 0 0 0-1.5H13V6.5h1.25a.75.75 0 0 0 0-1.5H13a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-.75V1.75a.75.75 0 0 0-1.5 0V3H6.5V1.75A.75.75 0 0 0 5.75 1ZM11 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h6Z"
+                  clip-rule="evenodd" />
               </svg>
-              <p class="text-xs text-muted mb-1">CPU</p>
+              <p class="text-xs text-accent-dim mb-1">CPU</p>
               <h4 class="font-space text-white font-semibold">Ryzen 5</h4>
-              <p class="text-xs text-muted">5500 · 6c & 12th</p>
+              <p class="text-xs text-accent-dim">5500 · 6c & 12th</p>
             </div>
             <div class="bg-faint p-4 rounded-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3" class="mb-2">
-                <path d="M264-384h72v-192h-72v192Zm180 0h72v-192h-72v192Zm180 0h72v-192h-72v192Zm-456 96h624v-384H168v384Zm0 0v-384 384Zm48 144v-72h-48q-29.7 0-50.85-21.15Q96-258.3 96-288v-384q0-29.7 21.15-50.85Q138.3-744 168-744h48v-72h72v72h156v-72h72v72h132v-72h72v72h72q29.7 0 50.85 21.15Q864-701.7 864-672v384q0 29.7-21.15 50.85Q821.7-216 792-216h-72v72h-72v-72H516v72h-72v-72H288v72h-72Z" />
+              <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"
+                class="mb-2">
+                <path
+                  d="M264-384h72v-192h-72v192Zm180 0h72v-192h-72v192Zm180 0h72v-192h-72v192Zm-456 96h624v-384H168v384Zm0 0v-384 384Zm48 144v-72h-48q-29.7 0-50.85-21.15Q96-258.3 96-288v-384q0-29.7 21.15-50.85Q138.3-744 168-744h48v-72h72v72h156v-72h72v72h132v-72h72v72h72q29.7 0 50.85 21.15Q864-701.7 864-672v384q0 29.7-21.15 50.85Q821.7-216 792-216h-72v72h-72v-72H516v72h-72v-72H288v72h-72Z" />
               </svg>
-              <p class="text-xs text-muted mb-1">RAM</p>
+              <p class="text-xs text-accent-dim mb-1">RAM</p>
               <h4 class="font-space text-white font-semibold">24GB</h4>
-              <p class="text-xs text-muted">DDR4</p>
+              <p class="text-xs text-accent-dim">DDR4</p>
             </div>
             <div class="bg-faint p-4 rounded-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-5 h-5 text-muted mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                class="w-5 h-5 text-accent-dim mb-2">
                 <path d="M8 7c3.314 0 6-1.343 6-3s-2.686-3-6-3-6 1.343-6 3 2.686 3 6 3Z" />
-                <path d="M8 8.5c1.84 0 3.579-.37 4.914-1.037A6.33 6.33 0 0 0 14 6.78V8c0 1.657-2.686 3-6 3S2 9.657 2 8V6.78c.346.273.72.5 1.087.683C4.42 8.131 6.16 8.5 8 8.5Z" />
-                <path d="M8 12.5c1.84 0 3.579-.37 4.914-1.037.366-.183.74-.41 1.086-.684V12c0 1.657-2.686 3-6 3s-6-1.343-6-3v-1.22c.346.273.72.5 1.087.683C4.42 12.131 6.16 12.5 8 12.5Z" />
+                <path
+                  d="M8 8.5c1.84 0 3.579-.37 4.914-1.037A6.33 6.33 0 0 0 14 6.78V8c0 1.657-2.686 3-6 3S2 9.657 2 8V6.78c.346.273.72.5 1.087.683C4.42 8.131 6.16 8.5 8 8.5Z" />
+                <path
+                  d="M8 12.5c1.84 0 3.579-.37 4.914-1.037.366-.183.74-.41 1.086-.684V12c0 1.657-2.686 3-6 3s-6-1.343-6-3v-1.22c.346.273.72.5 1.087.683C4.42 12.131 6.16 12.5 8 12.5Z" />
               </svg>
-              <p class="text-xs text-muted mb-1">Storage</p>
+              <p class="text-xs text-accent-dim mb-1">Storage</p>
               <h4 class="font-space text-white font-semibold">2.25 TB</h4>
-              <p class="text-xs text-muted">2 TB HDD · 256 GB SSD</p>
+              <p class="text-xs text-accent-dim">2 TB HDD · 256 GB SSD</p>
             </div>
           </div>
 
           <article class="project-detail-body reveal mt-8">
-            <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Estado del Servidor</h3>
+            <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Estado del
+              Servidor</h3>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-4 mt-6">
-              <div class="bg-surface border border-border rounded-[10px] p-5 flex flex-col gap-1 hover:border-muted transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-[1.1rem] h-[1.1rem] text-muted">
+              <div
+                class="bg-surface border border-border rounded-[10px] p-5 flex flex-col gap-1 hover:border-muted transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                  class="w-[1.1rem] h-[1.1rem] text-muted">
                   <path d="M6 6v4h4V6H6Z" />
-                  <path fill-rule="evenodd" d="M5.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3a2 2 0 0 0 2 2v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13a2 2 0 0 0 2-2h1.25a.75.75 0 0 0 0-1.5H13v-.75h1.25a.75.75 0 0 0 0-1.5H13V6.5h1.25a.75.75 0 0 0 0-1.5H13a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-.75V1.75a.75.75 0 0 0-1.5 0V3H6.5V1.75A.75.75 0 0 0 5.75 1ZM11 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h6Z" clip-rule="evenodd" />
+                  <path fill-rule="evenodd"
+                    d="M5.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3v.75H1.75a.75.75 0 0 0 0 1.5H3a2 2 0 0 0 2 2v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13h.75v1.25a.75.75 0 0 0 1.5 0V13a2 2 0 0 0 2-2h1.25a.75.75 0 0 0 0-1.5H13v-.75h1.25a.75.75 0 0 0 0-1.5H13V6.5h1.25a.75.75 0 0 0 0-1.5H13a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-.75V1.75a.75.75 0 0 0-1.5 0V3H6.5V1.75A.75.75 0 0 0 5.75 1ZM11 4.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5h6Z"
+                    clip-rule="evenodd" />
                 </svg>
                 <span class="text-xs font-space tracking-widest uppercase text-muted">CPU</span>
-                <span class="font-space text-[1.4rem] font-semibold text-white tracking-[-0.02em]" id="stat-cpu">—</span>
+                <span class="font-space text-[1.4rem] font-semibold text-white tracking-[-0.02em]"
+                  id="stat-cpu">—</span>
               </div>
-              <div class="bg-surface border border-border rounded-[10px] p-5 flex flex-col gap-1 hover:border-muted transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-[1.1rem] h-[1.1rem] text-muted">
-                  <path d="M3 2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3ZM2 9a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9ZM3 7.25a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5H3ZM3 3.25a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5H3ZM6.75 7.25a.75.75 0 0 0 0 1.5H10a.75.75 0 0 0 0-1.5H6.75ZM6 3.75A.75.75 0 0 1 6.75 3H10a.75.75 0 0 1 0 1.5H6.75A.75.75 0 0 1 6 3.75Z" />
-                  <path d="M2 12a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1ZM3 11.25a.75.75 0 0 0 0 1.5h.01a.75.75 0 0 0 0-1.5H3ZM6.75 11.25a.75.75 0 0 0 0 1.5H10a.75.75 0 0 0 0-1.5H6.75Z" />
+              <div
+                class="bg-surface border border-border rounded-[10px] p-5 flex flex-col gap-1 hover:border-muted transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"
+                class="mb-2">
+                <path
+                  d="M264-384h72v-192h-72v192Zm180 0h72v-192h-72v192Zm180 0h72v-192h-72v192Zm-456 96h624v-384H168v384Zm0 0v-384 384Zm48 144v-72h-48q-29.7 0-50.85-21.15Q96-258.3 96-288v-384q0-29.7 21.15-50.85Q138.3-744 168-744h48v-72h72v72h156v-72h72v72h132v-72h72v72h72q29.7 0 50.85 21.15Q864-701.7 864-672v384q0 29.7-21.15 50.85Q821.7-216 792-216h-72v72h-72v-72H516v72h-72v-72H288v72h-72Z" />
                 </svg>
                 <span class="text-xs font-space tracking-widest uppercase text-muted">RAM</span>
-                <span class="font-space text-[1.4rem] font-semibold text-white tracking-[-0.02em]" id="stat-ram">—</span>
+                <span class="font-space text-[1.4rem] font-semibold text-white tracking-[-0.02em]"
+                  id="stat-ram">—</span>
               </div>
-              <div class="bg-surface border border-border rounded-[10px] p-5 flex flex-col gap-1 hover:border-muted transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-[1.1rem] h-[1.1rem] text-muted">
-                  <path fill-rule="evenodd" d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Zm7.75-4.25a.75.75 0 0 0-1.5 0V8c0 .414.336.75.75.75h3.25a.75.75 0 0 0 0-1.5h-2.5v-3.5Z" clip-rule="evenodd" />
+              <div
+                class="bg-surface border border-border rounded-[10px] p-5 flex flex-col gap-1 hover:border-muted transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                  class="w-[1.1rem] h-[1.1rem] text-muted">
+                  <path fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Zm7.75-4.25a.75.75 0 0 0-1.5 0V8c0 .414.336.75.75.75h3.25a.75.75 0 0 0 0-1.5h-2.5v-3.5Z"
+                    clip-rule="evenodd" />
                 </svg>
                 <span class="text-xs font-space tracking-widest uppercase text-muted">Uptime</span>
-                <span class="font-space text-[1.4rem] font-semibold text-white tracking-[-0.02em]" id="stat-uptime">—</span>
+                <span class="font-space text-[1.4rem] font-semibold text-white tracking-[-0.02em]"
+                  id="stat-uptime">—</span>
               </div>
-              <div class="bg-surface border border-border rounded-[10px] p-5 flex flex-col gap-1 hover:border-muted transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-[1.1rem] h-[1.1rem] text-muted">
-                  <path fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L8 11.773l-3.136 2.22a.75.75 0 0 1-1.12-.814l.853-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z" clip-rule="evenodd" />
+              <div
+                class="bg-surface border border-border rounded-[10px] p-5 flex flex-col gap-1 hover:border-muted transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                  class="w-[1.1rem] h-[1.1rem] text-muted">
+                  <path fill-rule="evenodd"
+                    d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L8 11.773l-3.136 2.22a.75.75 0 0 1-1.12-.814l.853-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z"
+                    clip-rule="evenodd" />
                 </svg>
                 <span class="text-xs font-space tracking-widest uppercase text-muted">Estado</span>
                 <span class="font-space text-[1.4rem] font-semibold text-white tracking-[-0.02em]">
-                  <span id="stat-status" class="server-status-badge text-xs font-space font-medium tracking-wider px-[0.65rem] py-[0.2rem] rounded-full border border-border text-muted">—</span>
+                  <span id="stat-status"
+                    class="server-status-badge text-xs font-space font-medium tracking-wider px-[0.65rem] py-[0.2rem] rounded-full border border-border text-muted">—</span>
                 </span>
               </div>
             </div>
@@ -261,4 +306,5 @@
     setInterval(updateStats, 10_000);
   </script>
 </body>
+
 </html>
