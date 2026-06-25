@@ -1,97 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:300,400,500|space-grotesk:300,400,500,600,700" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:300,400,500|space-grotesk:300,400,500,600,700" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            space: ['Space Grotesk', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            surface: '#111',
+            border: '#2a2a2a',
+            'accent-dim': '#ccc',
+            muted: '#777',
+            faint: '#444',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body class="bg-black text-white">
+  <section id="hero" class="min-h-screen flex flex-col items-center pt-20">
+    <div class="flex flex-col justify-between min-h-[60vh] max-h-[90vh] px-8 py-16 w-full max-w-[860px] mx-auto">
+      <div class="hero-text">
+        <h1 class="font-space text-[clamp(3.5rem,9vw,7rem)] font-bold leading-none tracking-[-0.04em] text-white">Oriol Fibla Sancho</h1>
+        <h2 class="font-space text-[clamp(0.8rem,1.2vw,3rem)] pl-4 tracking-[0.05em] text-muted">~ DESARROLLADOR DE APLICACIONES WEB</h2>
+        <h2 class="font-space text-[clamp(0.8rem,1.2vw,3rem)] pl-4 tracking-[0.05em] text-muted">~ TÉCNICO EN SISTEMAS</h2>
+      </div>
+      <div class="self-end text-right max-w-[60vw]">
+        <p class="font-space text-[clamp(0.8rem,0.375rem+0.6667vw,1.125rem)] font-semibold tracking-[-0.02em] leading-snug text-accent-dim">
+          <span class="block mb-2" id="quoteSentence"></span>
+          <em class="font-normal" id="quoteAuthor"></em>
+          <span class="block text-[clamp(0.5rem,0.375rem+0.6667vw,1rem)] text-muted font-normal not-italic" id="quoteSource"></span>
+        </p>
+      </div>
+    </div>
+    <div>
+      <a href="#projects">
+        <img class="w-20" src="./assets/arrow.gif" alt="Flecha hacia abajo">
+      </a>
+    </div>
+  </section>
 
-<body>
-    <script src="./sentences.json"></script>
-    <canvas id="dotGridBg"></canvas>
-    <canvas id="dotGridFg"></canvas>
-    <nav id="navbar">
-        <div style="gap: 2rem; display: flex; align-items: center;">
-            <a href="#hero" class="nav-logo">
-                <img src="./assets/lambda.svg" alt="Lambda">
-            </a>
+  <section id="projects" class="py-24 border-t border-border">
+    <div class="max-w-[860px] mx-auto px-8">
+      <p class="text-xs tracking-widest uppercase text-muted font-space mb-3 reveal">Proyectos</p>
+      <h2 class="font-space text-[clamp(1.8rem,4vw,2.75rem)] font-bold tracking-[-0.03em] leading-tight mb-14 reveal">Cosas que en las que he estado trabajando</h2>
+      <div class="grid gap-5 projects-grid"></div>
+    </div>
+  </section>
 
-        </div>
+  <section id="contact" class="py-24 border-t border-border text-center">
+    <div class="max-w-[860px] mx-auto px-8">
+      <h2 class="font-space text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-[-0.03em] mb-4 reveal">¿Trabajamos juntos?</h2>
+      <p class="text-muted max-w-[440px] mx-auto mb-10 reveal">Estoy abierto a oportunidades freelance y posiciones a tiempo completo. Escríbeme, respondo en menos de 24h.</p>
+      <button id="copyEmail" class="inline-block px-7 py-3 rounded-[10px] font-space text-sm font-medium no-underline transition-all duration-150 bg-white text-black hover:bg-accent-dim hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,255,255,0.15)] reveal">oriolfibla06@gmail.com</button>
+      <div class="flex justify-center gap-4 flex-wrap mt-8 reveal">
+        <a href="https://github.com/OriolFiblaSancho" target="_blank" class="text-muted no-underline text-sm font-space flex items-center gap-1 hover:text-white transition-colors duration-200">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.57v-2c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.9 1.23 3.22 0 4.6-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.68.83.57C20.56 21.79 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/orifibla/" target="_blank" class="text-muted no-underline text-sm font-space flex items-center gap-1 hover:text-white transition-colors duration-200">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <ul class="nav-links">
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#contact">Contacto</a></li>
-            <li><a href="assets/CV.pdf" download="CV_OriolFiblaSancho.pdf">CV</a></li>
-            <li><a href="vault/vault.html">Vault</a></li>
-        </ul>
-    </nav>
+  <footer class="border-t border-border py-4 text-center">
+    <div class="max-w-[860px] mx-auto px-8">
+      <p class="text-faint text-xs"><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
+    </div>
+  </footer>
 
-    <section id="hero">
-        <div class="hero-container">
-            <div class="hero-inner">
-                <div class="hero-text">
-                    <h1 class="hero-name">Oriol Fibla Sancho</h1>
-                    <h2 class="hero-subtitle">~ DESARROLLADOR DE APLICACIONES WEB</h2>
-                    <h2 class="hero-subtitle">~ TÉCNICO EN SISTEMAS</h2>
-                </div>
-                <div class="hero-quote">
-                    <p class="quote-sentence" id="quoteSentence"></p>
-                    <p class="quote-author" id="quoteAuthor"></p>
-                    <p class="quote-source" id="quoteSource"></p>
-                </div>
-            </div>
-        </div>
-        <div>
-            <a href="#projects">
-                <img class="hero-arrow" src="./assets/arrow.gif" alt="Flecha hacia abajo">
-            </a>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <p class="section-label reveal">Proyectos</p>
-            <h2 class="section-title reveal">Cosas que en las que he estado trabajando</h2>
-            <div class="projects-grid"></div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2 class="contact-headline reveal">¿Trabajamos juntos?</h2>
-            <p class="contact-sub reveal">Estoy abierto a oportunidades freelance y posiciones a tiempo completo.
-                Escríbeme, respondo en menos de 24h.</p>
-            <button id="copyEmail" class="btn btn-primary reveal">oriolfibla06@gmail.com</button>
-            <div class="social-links reveal">
-                <a href="https://github.com/OriolFiblaSancho" target="_blank" class="social-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.57v-2c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.9 1.23 3.22 0 4.6-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.68.83.57C20.56 21.79 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
-                    </svg>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/orifibla/" target="_blank" class="social-link">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
-                    </svg>
-                    LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
-        </div>
-    </footer>
-    <script src="./script.js"></script>
-
+  <script>
+    window.__logoSrc = './assets/lambda.svg';
+    window.__logoHref = '#hero';
+    window.__navLinks = [
+      { href: '#projects', text: 'Proyectos' },
+      { href: '#contact', text: 'Contacto' },
+      { href: 'assets/CV.pdf', text: 'CV', download: 'CV_OriolFiblaSancho.pdf' },
+      { href: 'vault/vault.html', text: 'Vault' }
+    ];
+  </script>
+  <script src="./shared.js"></script>
+  <script src="./script.js"></script>
 </body>
-
 </html>

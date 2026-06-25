@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vault · Oriol Fibla</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vault · Oriol Fibla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            space: ['Space Grotesk', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            surface: '#111',
+            border: '#2a2a2a',
+            'accent-dim': '#ccc',
+            muted: '#777',
+            faint: '#444',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="../style.css">
 </head>
+<body class="bg-black text-white">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <canvas id="dotGridBg"></canvas>
-    <canvas id="dotGridFg"></canvas>
+  <main id="main" class="max-w-[860px] mx-auto px-8">
+    <section id="vault" class="py-24">
+      <div class="max-w-[860px] mx-auto">
+        <p class="text-xs tracking-widest uppercase text-muted font-space mb-3">Vault</p>
+        <h2 class="font-space text-[clamp(1.8rem,4vw,2.75rem)] font-bold tracking-[-0.03em] leading-tight mb-14">Apuntes y recursos</h2>
+        <div class="grid gap-5"></div>
+      </div>
+    </section>
+  </main>
 
-    <nav id="navbar">
-        <a href="../index.html#hero" class="nav-logo">
-            <img src="../assets/lambda.svg" alt="Lambda">
-        </a>
-        <ul class="nav-links">
-            <li><a href="../index.html">Volver</a></li>
-        </ul>
-    </nav>
-    <main id="main" class="container">
-        <section id="vault">
-            <div class="container">
-                <p class="section-label">Vault</p>
-                <h2 class="section-title">Apuntes y recursos</h2>
-                <div class="projects-grid"></div>
-            </div>
-        </section>
-
-    </main>
-
-
-    <script src="../script.js"></script>
-    <script src="./parser.js"></script>
-
+  <script>
+    window.__logoSrc = '../assets/lambda.svg';
+    window.__logoHref = '../index.html#hero';
+    window.__navLinks = [
+      { href: '../index.html', text: 'Volver' }
+    ];
+  </script>
+  <script src="../shared.js"></script>
+  <script src="./parser.js"></script>
 </body>
-
 </html>

@@ -1,246 +1,105 @@
-// ─── Año automático ───
-const yearElement = document.getElementById('year');
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
-
-// ─── Listar proyectos en base a JSON ───
-const projects_grid = document.querySelector(".projects-grid");
-
-// Declaramos el observer aquí arriba para configurar cómo actúa
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            // Calculamos el delay usando los elementos reales que hay en el DOM en este momento
-            const currentReveals = document.querySelectorAll('.reveal');
-            const delay = Array.from(currentReveals).indexOf(entry.target) % 4 * 80;
-
-            setTimeout(() => entry.target.classList.add('visible'), delay);
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.12 });
-
 async function loadProjects() {
-    try {
-        const res = await fetch('projects.json');
-        const data = await res.json();
+  try {
+    const res = await fetch('projects.json');
+    const data = await res.json();
+    const projects_grid = document.querySelector(".projects-grid");
+    if (!projects_grid) return;
 
-        // Asegúrate de que tu JSON tiene la propiedad "projects" (ej: data.projects)
-        data.projects.forEach((project) => {
-            // 1. Crear el contenedor principal (el enlace <a>)
-            const projectCard = document.createElement('a');
-            projectCard.href = project.url || '#';
-            projectCard.classList.add('project-card', 'reveal');
+    data.projects.forEach((project) => {
+      const projectCard = document.createElement('a');
+      projectCard.href = project.url || '#';
+      projectCard.className = 'project-card reveal group bg-black border border-border rounded-[10px] p-8 grid grid-cols-[1fr_auto] gap-4 items-start text-inherit no-underline transition-all duration-200 hover:border-muted hover:-translate-y-1';
 
-            // 2. Crear el div contenedor de la izquierda
-            const mainContent = document.createElement('div');
+      const mainContent = document.createElement('div');
 
-            // 3. Crear el header del proyecto y sus hijos
-            const projectHeader = document.createElement('div');
-            projectHeader.classList.add('project-header');
+      const projectHeader = document.createElement('div');
+      projectHeader.className = 'flex items-center gap-3 mb-3';
 
-            const projectDot = document.createElement('div');
-            projectDot.classList.add('project-dot');
+      const projectDot = document.createElement('div');
+      projectDot.className = 'w-2 h-2 rounded-full bg-white shrink-0';
 
-            const projectName = document.createElement('span');
-            projectName.classList.add('project-name');
-            projectName.textContent = project.name;
-            projectHeader.appendChild(projectDot);
-            projectHeader.appendChild(projectName);
+      const projectName = document.createElement('span');
+      projectName.className = 'font-space text-lg font-semibold tracking-[-0.01em]';
+      projectName.textContent = project.name;
+      projectHeader.appendChild(projectDot);
+      projectHeader.appendChild(projectName);
 
-            const projectDate = document.createElement('span');
-            projectDate.classList.add('project-date');
-            projectDate.textContent = project.date;
-            projectHeader.appendChild(projectDate);
+      const projectDate = document.createElement('span');
+      projectDate.className = 'text-muted';
+      projectDate.textContent = project.date;
+      projectHeader.appendChild(projectDate);
 
-            // 4. Crear la descripción
-            const projectDesc = document.createElement('p');
-            projectDesc.classList.add('project-desc');
-            projectDesc.textContent = project.description;
+      const projectDesc = document.createElement('p');
+      projectDesc.className = 'text-muted text-sm leading-relaxed mb-5';
+      projectDesc.textContent = project.description;
 
-            // 5. Crear la sección del stack de tecnologías
-            const projectStack = document.createElement('div');
-            projectStack.classList.add('project-stack');
+      const projectStack = document.createElement('div');
+      projectStack.className = 'flex flex-wrap gap-1';
 
-            // Bucle para añadir TODAS las tecnologías que tenga este proyecto en el JSON
-            if (project.stack && Array.isArray(project.stack)) {
-                project.stack.forEach(tech => {
-                    const stackTag = document.createElement('span');
-                    stackTag.classList.add('stack-tag');
-                    stackTag.textContent = tech;
-                    projectStack.appendChild(stackTag);
-                });
-            }
-
-            // 6. Armar el bloque de contenido izquierdo
-            mainContent.appendChild(projectHeader);
-            mainContent.appendChild(projectDesc);
-            mainContent.appendChild(projectStack);
-
-            // 7. Crear la flecha derecha
-            const projectArrow = document.createElement('span');
-            projectArrow.classList.add('project-arrow');
-            projectArrow.textContent = '↗';
-
-            // 8. Unir todo dentro de la tarjeta principal
-            projectCard.appendChild(mainContent);
-            projectCard.appendChild(projectArrow);
-
-            // 9. Inyectar la tarjeta en tu grid
-            projects_grid.appendChild(projectCard);
+      if (project.stack && Array.isArray(project.stack)) {
+        project.stack.forEach(tech => {
+          const stackTag = document.createElement('span');
+          stackTag.className = 'text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full';
+          stackTag.textContent = tech;
+          projectStack.appendChild(stackTag);
         });
+      }
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      mainContent.appendChild(projectHeader);
+      mainContent.appendChild(projectDesc);
+      mainContent.appendChild(projectStack);
 
-    } catch (error) {
-        console.error("Error al cargar el JSON:", error);
+      const projectArrow = document.createElement('span');
+      projectArrow.className = 'text-faint group-hover:text-white transition-colors duration-200';
+      projectArrow.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-[3px] group-hover:-translate-y-[3px]"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>`;
 
-        // Por si falla el JSON, activamos el observer para los elementos estáticos (el título, etc.)
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    }
+      projectCard.appendChild(mainContent);
+      projectCard.appendChild(projectArrow);
+
+      projects_grid.appendChild(projectCard);
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => __revealObserver.observe(el));
+
+  } catch (error) {
+    console.error("Error al cargar el JSON:", error);
+    document.querySelectorAll('.reveal').forEach(el => __revealObserver.observe(el));
+  }
 }
 
-// Ejecutar la carga de proyectos
 loadProjects();
 
-// ─── Nav scroll border ───
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
-// ─── Smooth scroll para links internos ───
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-});
-
-const canvasBg = document.getElementById('dotGridBg');
-const canvasFg = document.getElementById('dotGridFg');
-const ctxBg = canvasBg.getContext('2d');
-const ctxFg = canvasFg.getContext('2d');
-
-const SPACING = 13;
-const RADIUS = 0.8;
-const MAX_DIST = 80;
-const LERP = 0.1; 
-
-let target = { x: -9999, y: -9999 };
-let smooth = { x: -9999, y: -9999 };
-
-function resize() {
-    const dpr = devicePixelRatio;
-    
-    canvasBg.width = window.innerWidth * dpr;
-    canvasBg.height = window.innerHeight * dpr;
-    ctxBg.setTransform(dpr, 0, 0, dpr, 0, 0);
-    
-    canvasFg.width = window.innerWidth * dpr;
-    canvasFg.height = window.innerHeight * dpr;
-    ctxFg.setTransform(dpr, 0, 0, dpr, 0, 0);
-}
-resize();
-window.addEventListener('resize', resize);
-
-window.addEventListener('mousemove', e => {
-    target.x = e.clientX;
-    target.y = e.clientY;
-    if (smooth.x < 0) { smooth.x = target.x; smooth.y = target.y; }
-});
-
-window.addEventListener('mouseleave', () => {
-    target.x = -9999; target.y = -9999;
-    smooth.x = -9999; smooth.y = -9999;
-});
-
-function lerp(a, b, t) { return a + (b - a) * t; }
-function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-
-function draw() {
-    const W = window.innerWidth;
-    const H = window.innerHeight;
-
-    if (target.x > 0) {
-        smooth.x = lerp(smooth.x, target.x, LERP);
-        smooth.y = lerp(smooth.y, target.y, LERP);
-    }
-
-    // Limpiamos AMBOS lienzos
-    ctxBg.clearRect(0, 0, W, H);
-    ctxFg.clearRect(0, 0, W, H);
-
-    const offX = (W % SPACING) / 2;
-    const offY = (H % SPACING) / 2;
-    const cols = Math.ceil(W / SPACING) + 1;
-    const rows = Math.ceil(H / SPACING) + 1;
-
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-            const x = offX + c * SPACING;
-            const y = offY + r * SPACING;
-            const dist = Math.hypot(x - smooth.x, y - smooth.y); 
-            if (dist >= MAX_DIST) continue;
-            
-            const alpha = easeOut(1 - dist / MAX_DIST) * 0.7;
-            ctxBg.beginPath();
-            ctxBg.arc(x, y, RADIUS, 0, Math.PI * 2);
-            ctxBg.fillStyle = `rgba(255,255,255,${alpha.toFixed(3)})`;
-            ctxBg.fill();
-        }
-    }
-
-    if (target.x > 0) {
-        ctxFg.save();
-            
-        ctxFg.beginPath();
-        ctxFg.arc(target.x, target.y, 4, 0, Math.PI * 2); 
-        ctxFg.fillStyle = 'rgba(255, 255, 255, 1)';
-        ctxFg.fill();
-        
-        ctxFg.restore();
-    }
-    
-    requestAnimationFrame(draw);
-}
-
-draw();
-
-// Busca esta sección al final de tu script.js y envuélvela en este "if"
 const copyEmailBtn = document.getElementById('copyEmail');
 
 if (copyEmailBtn) {
-    copyEmailBtn.addEventListener('click', async () => {
-        const email = 'oriolfibla06@gmail.com';
-        try {
-            await navigator.clipboard.writeText(email);
-            copyEmailBtn.textContent = '✓ Copiado';
-            copyEmailBtn.style.background = '#2a2a2a';
-            copyEmailBtn.style.color = '#fff';
-            setTimeout(() => {
-                copyEmailBtn.textContent = email;
-                copyEmailBtn.style.background = '';
-                copyEmailBtn.style.color = '';
-            }, 2000);
-        } catch {
-            window.prompt('Copia este email:', email);
-        }
-    });
+  copyEmailBtn.addEventListener('click', async () => {
+    const email = 'oriolfibla06@gmail.com';
+    try {
+      await navigator.clipboard.writeText(email);
+      copyEmailBtn.textContent = '✓ Copiado';
+      copyEmailBtn.style.background = '#2a2a2a';
+      copyEmailBtn.style.color = '#fff';
+      setTimeout(() => {
+        copyEmailBtn.textContent = email;
+        copyEmailBtn.style.background = '';
+        copyEmailBtn.style.color = '';
+      }, 2000);
+    } catch {
+      window.prompt('Copia este email:', email);
+    }
+  });
 }
 
 function loadQuote() {
-    fetch('sentences.json')
-        .then(response => response.json())
-        .then(data => {
-            const randomIndex = Math.floor(Math.random() * data.sentences.length);
-            const quote = data.sentences[randomIndex];
-            document.getElementById('quoteSentence').textContent = quote.sentence;
-            document.getElementById('quoteAuthor').textContent = quote.author;
-            document.getElementById('quoteSource').textContent = quote.source;
-        })
-        .catch(error => console.error("Error al cargar la cita:", error));
+  fetch('sentences.json')
+    .then(response => response.json())
+    .then(data => {
+      const randomIndex = Math.floor(Math.random() * data.sentences.length);
+      const quote = data.sentences[randomIndex];
+      document.getElementById('quoteSentence').textContent = quote.sentence;
+      document.getElementById('quoteAuthor').textContent = quote.author;
+      document.getElementById('quoteSource').textContent = quote.source;
+    })
+    .catch(error => console.error("Error al cargar la cita:", error));
 }
 loadQuote();

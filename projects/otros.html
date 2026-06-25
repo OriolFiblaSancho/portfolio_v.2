@@ -1,101 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyecto: Nombre del Proyecto · Oriol Fibla</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Otros Proyectos · Oriol Fibla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            space: ['Space Grotesk', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            surface: '#111',
+            border: '#2a2a2a',
+            'accent-dim': '#ccc',
+            muted: '#777',
+            faint: '#444',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="../style.css">
 </head>
+<body class="bg-black text-white">
+  <section class="pt-32 pb-24">
+    <div class="max-w-[860px] mx-auto px-8">
+      <header class="reveal">
+        <p class="text-xs tracking-widest uppercase text-muted font-space mb-3">Proyectos pequeños y Tontos</p>
+        <h1 class="font-space text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-[-0.03em] leading-tight text-white">Otros...</h1>
+        <div class="flex flex-wrap gap-1 mt-4">
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">HTML5</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">CSS3</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">JavaScript</span>
+        </div>
+      </header>
 
-<body>
-        <canvas id="dotGridBg"></canvas>
-    <canvas id="dotGridFg"></canvas>
-    <nav id="navbar">
-        <a href="../index.html#hero" class="nav-logo">
-            <img src="../assets/lambda.svg" alt="Lambda">
-        </a>
-        <ul class="nav-links">
-            <li><a href="../index.html">Volver a Proyectos</a></li>
+      <article class="project-detail-body reveal mt-12">
+        <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Introducción</h3>
+        <p class="leading-relaxed mb-5 text-accent-dim">Durante mis años en el insituto estuve participando en varias hackatons de programacion donde ganaba recompensas que podian variar desde tecnologia, a viajes pagados a otros paises. Estos son algunos de esos proyectos.</p>
+        <p class="leading-relaxed mb-5 text-accent-dim mt-4">No son dignos de mención, pero me gusta tenerlos en mi portfolio para mostrar que he estado haciendo cosas desde hace tiempo y ademas les tengo cierto cariño.</p>
+      </article>
+
+      <article class="reveal mt-12">
+        <ul class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 list-none p-0 my-8">
+          <li class="bg-surface border border-border rounded-[10px] p-4 text-accent-dim text-sm flex items-center gap-3 hover:border-muted hover:text-white transition-colors duration-200">
+            <a href="https://oriol-fibla.itch.io/breakout" target="_blank" class="text-inherit no-underline">
+              <h3 class="font-space text-white font-semibold mb-2">Breakout Game</h3>
+              <img src="../assets/otros/breakoutgame.png" alt="Proyecto 1" class="w-52 object-contain">
+            </a>
+          </li>
+          <li class="bg-surface border border-border rounded-[10px] p-4 text-accent-dim text-sm flex items-center gap-3 hover:border-muted hover:text-white transition-colors duration-200">
+            <a href="https://oriol-fibla.itch.io/catinder" target="_blank" class="text-inherit no-underline">
+              <h3 class="font-space text-white font-semibold mb-2">Catinder</h3>
+              <img src="../assets/otros/catinder.png" alt="Proyecto 2" class="w-52 object-contain">
+            </a>
+          </li>
+          <li class="bg-surface border border-border rounded-[10px] p-4 text-accent-dim text-sm flex items-center gap-3 hover:border-muted hover:text-white transition-colors duration-200">
+            <a href="https://oriol-fibla.itch.io/jump-knight" target="_blank" class="text-inherit no-underline">
+              <h3 class="font-space text-white font-semibold mb-2">Jump Knight</h3>
+              <img src="../assets/otros/jumpknight.png" alt="Proyecto 3" class="w-52 object-contain">
+            </a>
+          </li>
+          <li class="bg-surface border border-border rounded-[10px] p-4 text-accent-dim text-sm flex items-center gap-3 hover:border-muted hover:text-white transition-colors duration-200">
+            <a href="https://oriol-fibla.itch.io/take-a-break" target="_blank" class="text-inherit no-underline">
+              <h3 class="font-space text-white font-semibold mb-2">Take a break</h3>
+              <img src="../assets/otros/takeabreak.png" alt="Proyecto 4" class="w-52 object-contain">
+            </a>
+          </li>
+          <li class="bg-surface border border-border rounded-[10px] p-4 text-accent-dim text-sm flex items-center gap-3 hover:border-muted hover:text-white transition-colors duration-200">
+            <a href="https://oriol-fibla.itch.io/old-paint-made-in-js" target="_blank" class="text-inherit no-underline">
+              <h3 class="font-space text-white font-semibold mb-2">Old Paint</h3>
+              <img src="../assets/otros/oldpaint.png" alt="Proyecto 5" class="w-52 object-contain">
+            </a>
+          </li>
         </ul>
-    </nav>
+      </article>
+    </div>
+  </section>
 
-    <section class="project-detail-section">
-        <div class="container">
+  <footer class="border-t border-border py-4 text-center">
+    <div class="max-w-[860px] mx-auto px-8">
+      <p class="text-faint text-xs"><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
+    </div>
+  </footer>
 
-            <header class="project-detail-header reveal">
-                <p class="section-label">Proyectos pequeños y Tontos</p>
-                <h1 class="project-detail-title">Otros...</h1>
-
-                <div class="project-stack" style="margin-top: 1rem;">
-                    <span class="stack-tag">HTML5</span>
-                    <span class="stack-tag">CSS3</span>
-                    <span class="stack-tag">JavaScript</span>
-                </div>
-            </header>
-
-            <article class="project-detail-body reveal">
-                <h3>Introducción</h3>
-                <p>Durante mis años en el insituto estuve participando en varias hackatons de programacion donde ganaba
-                    recompensas que podian variar desde tecnologia, a viajes pagados a otros paises. Estos son algunos
-                    de esos proyectos.
-                </p>
-                <p style="margin-top: 1rem;">
-                    No son dignos de mención, pero me gusta tenerlos en mi portfolio para mostrar que he estado haciendo cosas desde hace
-                    tiempo y ademas les tengo cierto cariño.
-                </p>
-            </article>
-
-            <article class="project-detail-body-grid reveal">
-                <ul>
-                    <li>
-                        <a href="https://oriol-fibla.itch.io/breakout" target="_blank">
-                            <h3>Breakout Game</h3>
-                            <img src="../assets/otros/breakoutgame.png" alt="Proyecto 1">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://oriol-fibla.itch.io/catinder" target="_blank">
-                            <h3>Catinder</h3>
-                            <img src="../assets/otros/catinder.png" alt="Proyecto 2">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://oriol-fibla.itch.io/jump-knight" target="_blank">
-                            <h3>Jump Knight</h3>
-                            <img src="../assets/otros/jumpknight.png" alt="Proyecto 3">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://oriol-fibla.itch.io/take-a-break" target="_blank">
-                            <h3>Take a break</h3>
-                            <img src="../assets/otros/takeabreak.png" alt="Proyecto 3">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://oriol-fibla.itch.io/old-paint-made-in-js" target="_blank">
-                            <h3>Old Paint</h3>
-                            <img src="../assets/otros/oldpaint.png" alt="Proyecto 3">
-                        </a>
-                    </li>
-                </ul>
-            </article>
-
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
-        </div>
-        </section>
-
-        <script src="../script.js"></script>
+  <script>
+    window.__logoSrc = '../assets/lambda.svg';
+    window.__logoHref = '../index.html#hero';
+    window.__navLinks = [
+      { href: '../index.html', text: 'Volver a Proyectos' }
+    ];
+  </script>
+  <script src="../shared.js"></script>
 </body>
-
 </html>

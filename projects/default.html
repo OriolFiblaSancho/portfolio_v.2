@@ -1,88 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyecto: Nombre del Proyecto · Oriol Fibla</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto: Nombre del Proyecto · Oriol Fibla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            space: ['Space Grotesk', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            surface: '#111',
+            border: '#2a2a2a',
+            'accent-dim': '#ccc',
+            muted: '#777',
+            faint: '#444',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="../style.css">
 </head>
-
-<body>
-    <canvas id="dotGridBg"></canvas>
-    <canvas id="dotGridFg"></canvas>
-
-    <nav id="navbar">
-        <a href="../index.html#hero" class="nav-logo">
-            <img src="../assets/lambda.svg" alt="Lambda">
-        </a>
-        <ul class="nav-links">
-            <li><a href="../index.html">Volver a Proyectos</a></li>
-        </ul>
-    </nav>
-
-    <section class="project-detail-section">
-        <div class="container">
-            
-            <header class="project-detail-header reveal">
-                <p class="section-label"></p>
-                <h1 class="project-detail-title">Nombre del Proyecto</h1>
-                
-                <div class="project-stack" style="margin-top: 1rem;">
-                    <span class="stack-tag">HTML5</span>
-                    <span class="stack-tag">CSS3</span>
-                    <span class="stack-tag">JavaScript</span>
-                    <span class="stack-tag">Node.js</span>
-                </div>
-            </header>
-
-            <article class="project-detail-body reveal">
-                <h3>Introducción y Propósito</h3>
-                <p>Aquí va la introducción detallada de tu proyecto. Puedes explicar qué problema resolvía, el por qué decidiste construirlo (motivación personal, proyecto académico, freelance) y los mayores retos técnicos que superaste durante el desarrollo.</p>
-            </article>
-
-            <div class="project-detail-media reveal">
-                <img src="../assets/proyecto-mockup.png" alt="Vista previa del proyecto" class="media-element">
-                
-                </div>
-
-            <div class="project-optional-sections">
-                
-                <section class="detail-sub-section reveal">
-                    <h3>Manual de uso / Instrucciones</h3>
-                    <p>Sigue estos pasos para desplegar o interactuar con la aplicación:</p>
-                    <ol class="custom-list">
-                        <li>Clona el repositorio desde GitHub de forma local.</li>
-                        <li>Instala las dependencias ejecutando <code>npm install</code> en tu terminal.</li>
-                        <li>Configura las variables de entorno en el archivo <code>.env</code>.</li>
-                        <li>Inicia el servidor de desarrollo con <code>npm start</code>.</li>
-                    </ol>
-                </section>
-
-                <section class="detail-sub-section reveal project-actions">
-                    <h3>¿Quieres probarlo?</h3>
-                    <p>Puedes ver el código fuente completo o probar la aplicación en vivo a través de los siguientes enlaces:</p>
-                    <div class="action-buttons">
-                        <a href="https://tu-link-de-demo.com" target="_blank" class="btn btn-primary">Probar Aplicación ↗</a>
-                        <a href="https://github.com/OriolFiblaSancho" target="_blank" class="btn btn-ghost">Ver Repositorio</a>
-                    </div>
-                </section>
-
-            </div>
-
+<body class="bg-black text-white">
+  <section class="pt-32 pb-24">
+    <div class="max-w-[860px] mx-auto px-8">
+      <header class="reveal">
+        <p class="text-xs tracking-widest uppercase text-muted font-space mb-3"></p>
+        <h1 class="font-space text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-[-0.03em] leading-tight text-white">Nombre del Proyecto</h1>
+        <div class="flex flex-wrap gap-1 mt-4">
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">HTML5</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">CSS3</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">JavaScript</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Node.js</span>
         </div>
-    </section>
+      </header>
 
-    <footer>
-        <div class="container">
-            <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
-        </div>
-    </section>
+      <article class="project-detail-body reveal mt-12">
+        <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Introducción y Propósito</h3>
+        <p class="leading-relaxed mb-5 text-accent-dim">Aquí va la introducción detallada de tu proyecto. Puedes explicar qué problema resolvía, el por qué decidiste construirlo (motivación personal, proyecto académico, freelance) y los mayores retos técnicos que superaste durante el desarrollo.</p>
+      </article>
 
-    <script src="../script.js"></script>
+      <div class="my-12 border border-border rounded-[10px] overflow-hidden reveal">
+        <img src="../assets/proyecto-mockup.png" alt="Vista previa del proyecto" class="w-full h-auto block object-cover">
+      </div>
+
+      <div class="project-optional-sections">
+        <section class="mb-14 reveal">
+          <h3 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Manual de uso / Instrucciones</h3>
+          <p class="leading-relaxed mb-5 text-accent-dim">Sigue estos pasos para desplegar o interactuar con la aplicación:</p>
+          <ol class="pl-6 text-accent-dim">
+            <li class="mb-2">Clona el repositorio desde GitHub de forma local.</li>
+            <li class="mb-2">Instala las dependencias ejecutando <code class="font-mono text-xs bg-[#1e1e1e] px-1.5 py-0.5 rounded text-[#d0d0d0]">npm install</code> en tu terminal.</li>
+            <li class="mb-2">Configura las variables de entorno en el archivo <code class="font-mono text-xs bg-[#1e1e1e] px-1.5 py-0.5 rounded text-[#d0d0d0]">.env</code>.</li>
+            <li class="mb-2">Inicia el servidor de desarrollo con <code class="font-mono text-xs bg-[#1e1e1e] px-1.5 py-0.5 rounded text-[#d0d0d0]">npm start</code>.</li>
+          </ol>
+        </section>
+
+        <section class="bg-surface border border-border rounded-[10px] p-10 mb-14 reveal">
+          <h3 class="font-space text-2xl font-semibold mb-4 text-white">¿Quieres probarlo?</h3>
+          <p class="leading-relaxed mb-5 text-accent-dim">Puedes ver el código fuente completo o probar la aplicación en vivo a través de los siguientes enlaces:</p>
+          <div class="flex gap-4 flex-wrap mt-6">
+            <a href="https://tu-link-de-demo.com" target="_blank" class="inline-block px-7 py-3 rounded-[10px] font-space text-sm font-medium no-underline transition-all duration-150 bg-white text-black hover:bg-accent-dim hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,255,255,0.15)]">Probar Aplicación ↗</a>
+            <a href="https://github.com/OriolFiblaSancho" target="_blank" class="inline-block px-7 py-3 rounded-[10px] font-space text-sm font-medium no-underline transition-all duration-150 bg-transparent text-muted border border-border hover:text-white hover:border-faint hover:-translate-y-0.5">Ver Repositorio</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-border py-4 text-center">
+    <div class="max-w-[860px] mx-auto px-8">
+      <p class="text-faint text-xs"><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    window.__logoSrc = '../assets/lambda.svg';
+    window.__logoHref = '../index.html#hero';
+    window.__navLinks = [
+      { href: '../index.html', text: 'Volver a Proyectos' }
+    ];
+  </script>
+  <script src="../shared.js"></script>
 </body>
-
 </html>

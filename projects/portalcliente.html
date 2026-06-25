@@ -1,65 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyecto: Nombre del Proyecto · Oriol Fibla</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Cliente · Oriol Fibla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            space: ['Space Grotesk', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            surface: '#111',
+            border: '#2a2a2a',
+            'accent-dim': '#ccc',
+            muted: '#777',
+            faint: '#444',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="../style.css">
 </head>
-
-<body>
-        <canvas id="dotGridBg"></canvas>
-    <canvas id="dotGridFg"></canvas>
-
-    <nav id="navbar">
-        <a href="../index.html#hero" class="nav-logo">
-            <img src="../assets/lambda.svg" alt="Lambda">
-        </a>
-        <ul class="nav-links">
-            <li><a href="../index.html">Volver a Proyectos</a></li>
-        </ul>
-    </nav>
-
-    <section class="project-detail-section">
-        <div class="container">
-            
-            <header class="project-detail-header reveal">
-                <p class="section-label">Centralizacion de datos</p>
-                <h1 class="project-detail-title">Tu Portal Cliente</h1>
-                
-                <div class="project-stack" style="margin-top: 1rem;">
-                    <span class="stack-tag">VUE</span>
-                    <span class="stack-tag">TypeScript</span>
-                    <span class="stack-tag">Python</span>
-                    <span class="stack-tag">FastAPI</span>
-                    <span class="stack-tag">MySQL</span>
-                    <span class="stack-tag">Docker</span>
-                </div>
-            </header>
-
-            <div class="project-optional-sections" style="margin-top: 2rem;">
-
-                <section class="detail-sub-section reveal project-actions">
-                    <h3>Pagina en construcción</h3>
-                    <img src="../assets/under_constr.gif" alt="">
-                </section>
-
-            </div>
-
+<body class="bg-black text-white">
+  <section class="pt-32 pb-24">
+    <div class="max-w-[860px] mx-auto px-8">
+      <header class="reveal">
+        <p class="text-xs tracking-widest uppercase text-muted font-space mb-3">Centralizacion de datos</p>
+        <h1 class="font-space text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-[-0.03em] leading-tight text-white">Tu Portal Cliente</h1>
+        <div class="flex flex-wrap gap-1 mt-4">
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">VUE</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">TypeScript</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Python</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">FastAPI</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">MySQL</span>
+          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Docker</span>
         </div>
-    </section>
+      </header>
 
-    <footer>
-        <div class="container">
-            <p><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
-        </div>
-    </section>
+      <div class="project-optional-sections mt-8">
+        <section class="bg-surface border border-border rounded-[10px] p-10 mb-14 reveal">
+          <h3 class="font-space text-2xl font-semibold mb-4 text-white">Pagina en construcción</h3>
+          <img src="../assets/under_constr.gif" alt="">
+        </section>
+      </div>
+    </div>
+  </section>
 
-    <script src="../script.js"></script>
+  <footer class="border-t border-border py-4 text-center">
+    <div class="max-w-[860px] mx-auto px-8">
+      <p class="text-faint text-xs"><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    window.__logoSrc = '../assets/lambda.svg';
+    window.__logoHref = '../index.html#hero';
+    window.__navLinks = [
+      { href: '../index.html', text: 'Volver a Proyectos' }
+    ];
+  </script>
+  <script src="../shared.js"></script>
 </body>
-
 </html>
