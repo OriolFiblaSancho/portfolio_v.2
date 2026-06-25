@@ -16,7 +16,7 @@
     },
     {
       "name": "Fleetly",
-      "description": "Aplicación de gestión de flotas de vehículos desarrollada como proyecto de final de grado.",
+      "description": "Aplicación de gestión de flotas de vehículos desarrollada como proyecto de final del grado superior. ",
       "url": "/projects/fleetly.html",
       "date": "Enero - Marzo 2026",
       "stack": [
@@ -31,7 +31,7 @@
       "name": "Home Lab",
       "description": "Mi servidor casero donde alojar mis propios servicios y datos.",
       "url": "/projects/homelab.html",
-      "date": "Junio 2026",
+      "date": "Junio 2026 - En progreso",
       "stack": [
         "Cloudflare",
         "Docker",
