@@ -1,0 +1,22 @@
+{
+  "experience": [
+    {
+      "company": "Diagram S.L",
+      "role": "Desarrollador Web Junior",
+      "period": "Sept 2025 — Sept 2026",
+      "periods": [
+        { "label": "Becario", "period": "Sept 2025 — May 2026" },
+        { "label": "Empleado", "period": "May 2026 — Sept 2026" }
+      ],
+      "description": "Desarrollo de módulos en una aplicación de gestión y facturación empresarial con FastAPI y Vue+TypeScript. Posteriormente me asignaron el proyecto PortalCliente, una plataforma para centralizar la comunicación y datos entre asesorías y sus clientes, que seguí desarrollando como empleado.",
+      "stack": ["FastAPI", "Vue", "TypeScript", "PostgreSQL"]
+    },
+    {
+      "company": "GIS S.L",
+      "role": "Becario Técnico de Redes y Sistemas",
+      "period": "Jun 2023 — Ene 2024",
+      "description": "Asistencia en administración de redes y sistemas para distintos clientes. Montaje de hardware y colaboración en el montaje y gestión de redes empresariales.",
+      "stack": ["Redes", "Hardware", "Linux", "Sysadmin"]
+    }
+  ]
+}

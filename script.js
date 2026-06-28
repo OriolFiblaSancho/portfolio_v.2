@@ -206,6 +206,83 @@ if (copyEmailBtn) {
   });
 }
 
+function loadExperience() {
+  fetch('experience.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.querySelector('.experience-list');
+      if (!container) return;
+
+      data.experience.forEach((entry, i) => {
+        const isLast = i === data.experience.length - 1;
+
+        const wrapper = document.createElement('div');
+        wrapper.className = `flex gap-5 reveal ${isLast ? '' : 'mb-12'}`;
+
+        const lineCol = document.createElement('div');
+        lineCol.className = 'flex flex-col items-center';
+        const dot = document.createElement('div');
+        dot.className = 'w-3 h-3 rounded-full bg-white mt-1.5 shrink-0';
+        const line = document.createElement('div');
+        line.className = 'w-px flex-1 bg-border mt-2';
+        lineCol.append(dot, line);
+
+        const content = document.createElement('div');
+        content.className = 'flex-1 pb-2';
+
+        const period = document.createElement('span');
+        period.className = 'text-xs text-muted font-space';
+        period.textContent = entry.period;
+
+        const company = document.createElement('h3');
+        company.className = 'font-space text-lg font-semibold mt-1';
+        company.textContent = entry.company;
+
+        const role = document.createElement('p');
+        role.className = 'text-sm text-white/80';
+        role.textContent = entry.role;
+
+        content.append(period, company, role);
+
+        if (entry.periods && Array.isArray(entry.periods)) {
+          const subRoles = document.createElement('div');
+          subRoles.className = 'mt-2 space-y-1';
+          entry.periods.forEach(sub => {
+            const sr = document.createElement('p');
+            sr.className = 'text-xs text-muted font-space';
+            sr.textContent = `${sub.label} · ${sub.period}`;
+            subRoles.appendChild(sr);
+          });
+          content.appendChild(subRoles);
+        }
+
+        const desc = document.createElement('p');
+        desc.className = 'text-sm text-muted leading-relaxed mt-3';
+        desc.textContent = entry.description;
+        content.appendChild(desc);
+
+        if (entry.stack && Array.isArray(entry.stack)) {
+          const stackWrap = document.createElement('div');
+          stackWrap.className = 'flex flex-wrap gap-1 mt-3';
+          entry.stack.forEach(tech => {
+            const tag = document.createElement('span');
+            tag.className = 'text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full';
+            tag.textContent = tech;
+            stackWrap.appendChild(tag);
+          });
+          content.appendChild(stackWrap);
+        }
+
+        wrapper.append(lineCol, content);
+        container.appendChild(wrapper);
+      });
+
+      document.querySelectorAll('.reveal').forEach(el => __revealObserver.observe(el));
+    })
+    .catch(error => console.error("Error al cargar experiencia:", error));
+}
+loadExperience();
+
 function loadQuote() {
   fetch('sentences.json')
     .then(response => response.json())
