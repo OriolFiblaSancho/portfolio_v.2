@@ -48,14 +48,6 @@ if (navbar) {
   }, { passive: true });
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    var target = document.querySelector(link.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-
 var __revealObserver = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {

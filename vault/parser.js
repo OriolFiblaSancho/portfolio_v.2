@@ -64,7 +64,7 @@ async function init() {
 
   notes.forEach(note => {
     const div = document.createElement('div');
-    div.className = 'project-card bg-surface border border-border rounded-[10px] p-5 text-inherit transition-all duration-200 hover:border-muted cursor-none';
+    div.className = 'project-card bg-surface border border-border rounded-[10px] p-5 text-inherit transition-all duration-200 hover:border-muted cursor-pointer';
     div.innerHTML = `
       <h3 class="font-space text-white font-semibold text-lg mb-1">${note.title}</h3>
       <p class="text-muted text-sm">${note.date}</p>
