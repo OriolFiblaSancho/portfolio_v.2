@@ -239,7 +239,7 @@ function loadExperience() {
         company.textContent = entry.company;
 
         const role = document.createElement('p');
-        role.className = 'text-sm text-white/80';
+        role.className = 'text-md text-white/80';
         role.textContent = entry.role;
 
         content.append(period, company, role);
@@ -249,7 +249,7 @@ function loadExperience() {
           subRoles.className = 'mt-2 space-y-1';
           entry.periods.forEach(sub => {
             const sr = document.createElement('p');
-            sr.className = 'text-xs text-muted font-space';
+            sr.className = 'text-xs font-bold text-muted font-space';
             sr.textContent = `${sub.label} · ${sub.period}`;
             subRoles.appendChild(sr);
           });
