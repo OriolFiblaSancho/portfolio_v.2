@@ -1,18 +1,6 @@
 ::selection { background: white; color: black; }
 
 html { scroll-behavior: smooth; }
-html, body, a, button, .btn, .project-card, .social-link { cursor: none; }
-
-#dotGridBg {
-  position: fixed; top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  z-index: -1; pointer-events: none;
-}
-#dotGridFg {
-  position: fixed; top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  z-index: 99999; pointer-events: none;
-}
 
 .reveal {
   opacity: 0;
