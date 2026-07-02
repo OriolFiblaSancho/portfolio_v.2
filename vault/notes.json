@@ -6,7 +6,7 @@
             "date": "17/06/2026"
         },
         {
-            "title": "El protocolo BitTorrent y los private trackers",
+            "title": "BitTorrent - Introduccion al protocolo y a los private trackers",
             "content": "./notes/TORRENT.md",
             "date": "In progress"
         }
