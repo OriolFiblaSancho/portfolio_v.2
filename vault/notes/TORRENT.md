@@ -40,7 +40,7 @@ Un archivo .torrent contiene metadatos sobre lo que se va a descargar. Por ejemp
 
 BitTorrent usa varios algoritmos para repartir mejor los datos. Además de *choke/unchoke*, destacan:
 
-- **Tit for Tat **: prioriza, mediante las reglas de *choking/unchoking* y *optimistic unchoking*, a quienes también contribuyen. Es una forma de incentivar la reciprocidad en la red.
+- **Tit for Tat**: prioriza, mediante las reglas de *choking/unchoking* y *optimistic unchoking*, a quienes también contribuyen. Es una forma de incentivar la reciprocidad en la red.
 
 - **Rarest First**: intenta descargar antes las piezas menos comunes. Así se mantiene la diversidad y se reduce el riesgo de que falten piezas si se desconectan varios peers.
 
