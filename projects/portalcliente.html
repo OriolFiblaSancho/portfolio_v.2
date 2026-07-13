@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portal Cliente — Centralización de datos empresariales por Oriol Fibla.">
+  <meta name="description" content="Portal Cliente — SaaS multi-tenant para la gestión integral de asesorías. Proyecto laboral de Oriol Fibla en Diagram Software.">
   <title>Portal Cliente · Oriol Fibla</title>
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.bunny.net">
@@ -33,25 +33,142 @@
 <body class="bg-black text-white">
   <section class="pt-32 pb-24">
     <div class="max-w-[860px] mx-auto px-8">
-      <header class="reveal">
-        <p class="text-xs tracking-widest uppercase text-muted font-space mb-3">Centralizacion de datos</p>
-        <h1 class="font-space text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-[-0.03em] leading-tight text-white">Tu Portal Cliente</h1>
-        <div class="flex flex-wrap gap-1 mt-4">
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">VUE</span>
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">TypeScript</span>
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Python</span>
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">FastAPI</span>
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">MySQL</span>
-          <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Docker</span>
+
+      <!-- Header -->
+      <header class="reveal mb-10">
+        <div>
+          <p class="text-xs tracking-widest uppercase text-muted font-space mb-2">SaaS para asesorías · Multi-Tenant</p>
+          <h1 class="font-space text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-[-0.03em] leading-tight text-white">Portal Cliente</h1>
+          <p class="text-accent-dim text-sm mt-2 leading-relaxed max-w-xl">
+            Una plataforma B2B que centraliza la gestión documental, laboral y fiscal de una asesoría y la pone a disposición de sus clientes en un portal único.
+          </p>
+          <div class="flex flex-wrap gap-1 mt-4">
+            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Vue 3</span>
+            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">TypeScript</span>
+            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Python</span>
+            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">FastAPI</span>
+            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">MariaDB</span>
+            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Docker</span>
+          </div>
         </div>
       </header>
 
-      <div class="project-optional-sections mt-8">
-        <section class="bg-surface border border-border rounded-[10px] p-10 mb-14 reveal">
-          <h3 class="font-space text-2xl font-semibold mb-4 text-white">Pagina en construcción</h3>
-          <img src="../assets/under_constr.gif" alt="">
-        </section>
+      <!-- Hero video -->
+      <div class="rounded-[10px] overflow-hidden border border-border reveal mb-20">
+        <video src="../assets/projects_videos/portalcliente.mp4" autoplay muted loop playsinline class="w-full h-auto block"></video>
       </div>
+
+      <!-- El proyecto -->
+      <article class="reveal mb-20">
+        <h2 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">El proyecto</h2>
+        <p class="text-accent-dim leading-relaxed mb-4">
+          Portal Cliente nace de la necesidad de modernizar la relación entre las asesorías y sus clientes. En <strong class="text-white">Diagram Software</strong> desarrollamos esta plataforma para reemplazar un sistema legacy y ofrecer una experiencia web moderna, centralizada y escalable.
+        </p>
+        <p class="text-accent-dim leading-relaxed">
+          Trabajé como <strong class="text-white">full-stack developer</strong> durante casi un año, participando en el diseño e implementación completos del frontend con <strong class="text-white">Vue 3 + TypeScript</strong> y del backend con <strong class="text-white">FastAPI + Python</strong>, así como en la migración progresiva desde el monolito PHP existente.
+        </p>
+      </article>
+
+      <!-- Características -->
+      <div class="reveal mb-20">
+        <h2 class="font-space text-2xl font-semibold mb-6 text-white border-b border-border pb-2">Módulos de la plataforma</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
+            <h3 class="font-space text-sm font-semibold text-white mb-1">Portal del cliente</h3>
+            <p class="text-muted text-sm leading-relaxed">Cada cliente accede a su propio dashboard con documentos, expedientes y solicitudes asignadas por la asesoría.</p>
+          </div>
+          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
+            <h3 class="font-space text-sm font-semibold text-white mb-1">Gestión laboral</h3>
+            <p class="text-muted text-sm leading-relaxed">Nóminas, contratos, cartas de variación, finiquitos, informes de costes y más, todo integrado con AvanzaPi.</p>
+          </div>
+          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
+            <h3 class="font-space text-sm font-semibold text-white mb-1">Expedientes y solicitudes</h3>
+            <p class="text-muted text-sm leading-relaxed">Sistema de casos con hilos de conversación, adjuntos y operaciones en lote entre asesoría y cliente.</p>
+          </div>
+          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
+            <h3 class="font-space text-sm font-semibold text-white mb-1">Altas de empleados</h3>
+            <p class="text-muted text-sm leading-relaxed">Flujo asíncrono con Celery para el registro de empleados vía API externa, con estados y notificaciones en tiempo real.</p>
+          </div>
+          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
+            <h3 class="font-space text-sm font-semibold text-white mb-1">RBAC multi-tenant</h3>
+            <p class="text-muted text-sm leading-relaxed">Roles y permisos granularmente escalados por asesoría y por cliente, con alcances de administrador global, asesor y cliente.</p>
+          </div>
+          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
+            <h3 class="font-space text-sm font-semibold text-white mb-1">Tablón de noticias</h3>
+            <p class="text-muted text-sm leading-relaxed">Publicaciones internas con filtro por departamento y publicación programada mediante tareas Celery beat.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arquitectura -->
+      <article class="reveal mb-20">
+        <h2 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Arquitectura</h2>
+
+        <p class="text-accent-dim leading-relaxed mb-6">
+          El backend sigue una arquitectura por capas (<strong class="text-white">routes → services → repositories → adapters</strong>) con módulos independientes para cada dominio de negocio. El frontend replica esta organización con módulos de páginas, componentes, composables y rutas.
+        </p>
+
+        <div class="bg-[#0a0a0a] border border-border rounded-[10px] p-6 font-mono text-xs leading-relaxed overflow-x-auto mb-6">
+          <div class="text-faint mb-2"># Diagrama de arquitectura simplificado</div>
+          <div class="text-[#4ade80] mb-1">web (Vue 3 + TS)</div>
+          <div class="pl-4 text-muted">├─ auth, clients, laboral</div>
+          <div class="pl-4 text-muted">├─ expedientes, solicitudes</div>
+          <div class="pl-4 text-muted">├─ fiscal, contabilidad</div>
+          <div class="pl-4 text-muted">└─ altas, tablon_noticias</div>
+          <div class="text-[#4ade80] mt-3 mb-1">api (FastAPI + Python 3.13)</div>
+          <div class="pl-4 text-muted">├─ módulos espejo (routes → service → repo)</div>
+          <div class="pl-4 text-muted">├─ JWT auth + RBAC por header (X-Adviser-Id, X-Client-Id)</div>
+          <div class="pl-4 text-muted">├─ Celery + Redis (tareas asíncronas)</div>
+          <div class="pl-4 text-muted">└─ Sentry + Prometheus (observabilidad)</div>
+          <div class="text-[#4ade80] mt-3 mb-1">db (MariaDB + MySQL replica)</div>
+          <div class="pl-4 text-muted">├─ MariaDB (datos principales)</div>
+          <div class="pl-4 text-muted">└─ MySQL replica (DS Replica — datos legacy)</div>
+        </div>
+
+        <p class="text-accent-dim leading-relaxed mb-4">
+          La autenticación es por <strong class="text-white">JWT</strong> con tokens de acceso y refresco. El multi-tenancy se resuelve mediante cabeceras HTTP (<code class="font-mono text-xs bg-[#1e1e1e] px-1.5 py-0.5 rounded">X-Adviser-Id</code>, <code class="font-mono text-xs bg-[#1e1e1e] px-1.5 py-0.5 rounded">X-Client-Id</code>) que determinan el alcance de los datos en cada petición.
+        </p>
+
+        <p class="text-accent-dim leading-relaxed">
+          Las tareas pesadas (registro de empleados vía AvanzaPi, notificaciones de nóminas, publicación diferida de noticias) se procesan de forma asíncrona con <strong class="text-white">Celery + Redis</strong>, y el frontend recibe actualizaciones en tiempo real mediante <strong class="text-white">WebSockets</strong>.
+        </p>
+      </article>
+
+      <!-- Stack -->
+      <div class="reveal mb-20">
+        <h2 class="font-space text-2xl font-semibold mb-6 text-white border-b border-border pb-2">Stack tecnológico</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-space text-sm font-semibold text-white mb-3 tracking-wide">Frontend</h3>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Vue 3 + Composition API + TS</li>
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Vite + Tailwind CSS 4</li>
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Pinia (estado) + Vue Router</li>
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>vue-i18n (ES / EN / CA / DE)</li>
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Tiptap (editor rich text)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-space text-sm font-semibold text-white mb-3 tracking-wide">Backend</h3>
+            <ul class="space-y-2">
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>FastAPI + Python 3.13</li>
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>SQLAlchemy + Alembic</li>
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>MariaDB + MySQL (DS Replica)</li>
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Celery + Redis (tareas async)</li>
+              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>JWT + WebSockets + Sentry</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <section class="bg-surface border border-border rounded-[10px] p-10 mb-14 reveal">
+        <h3 class="font-space text-2xl font-semibold mb-2 text-white">Un proyecto laboral en Diagram Software</h3>
+        <p class="text-muted text-sm mb-6">
+          Portal Cliente fue mi principal proyecto durante casi un año en Diagram Software, donde participé en el desarrollo full-stack completo y la migración desde un monolito PHP a una arquitectura moderna con Vue 3 + FastAPI. El código es propiedad de la empresa y no está disponible públicamente.
+        </p>
+      </section>
+
     </div>
   </section>
 
