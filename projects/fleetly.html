@@ -1,223 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fleetly — Plataforma SaaS multi-tenant para la gestión de flotas de vehículos. Proyecto de final de grado superior de Oriol Fibla.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fleetly · Oriol Fibla</title>
+  <meta name="description" content="Fleetly: plataforma SaaS multi-tenant para la gestión de flotas de vehículos. Proyecto final de grado superior de Oriol Fibla.">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=inter:300,400,500|space-grotesk:300,400,500,600,700" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            space: ['Space Grotesk', 'sans-serif'],
-            inter: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            surface: '#111',
-            border: '#2a2a2a',
-            'accent-dim': '#ccc',
-            muted: '#777',
-            faint: '#444',
-          },
-        },
-      },
-    }
-  </script>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" href="../assets/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../site.css">
 </head>
-<body class="bg-black text-white">
-  <section class="pt-32 pb-24">
-    <div class="max-w-[860px] mx-auto px-8">
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="../index.html">λ oriol fibla</a>
+      <a class="back" href="../index.html#proyectos">proyectos</a>
+    </header>
 
-      <!-- Header -->
-      <header class="reveal mb-10">
-        <div>
-          <p class="text-xs tracking-widest uppercase text-muted font-space mb-2">Control de flotas · SaaS Multi-Tenant</p>
-          <h1 class="font-space text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-[-0.03em] leading-tight text-white">Fleetly</h1>
-          <p class="text-accent-dim text-sm mt-2 leading-relaxed max-w-xl">
-            Una plataforma B2B para la gestión integral de flotas vehículares con arquitectura multi-tenant, pagos integrados y chatbot por rol.
-          </p>
-          <div class="flex flex-wrap gap-1 mt-4">
-            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Vue 3</span>
-            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">TypeScript</span>
-            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Laravel 12</span>
-            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">PostgreSQL 18</span>
-            <span class="text-xs font-space text-muted bg-white/5 border border-border px-[0.6rem] py-[0.2rem] rounded-full">Docker</span>
-          </div>
-        </div>
-      </header>
-
-      <!-- Hero video -->
-      <div class="rounded-[10px] overflow-hidden border border-border reveal mb-20">
-        <video src="../assets/projects_videos/fleetly_admin.mp4" autoplay muted loop playsinline class="w-full h-auto block"></video>
+    <main>
+      <div class="page-head">
+        <p class="kicker">Control de flotas · SaaS multi-tenant</p>
+        <h1>Fleetly</h1>
+        <p class="lead">Una plataforma B2B para la gestión integral de flotas de vehículos, con arquitectura multi-tenant, pagos integrados y un chatbot adaptado a cada rol.</p>
+        <p class="meta">Ene – Mar 2026 · Vue 3 · TypeScript · Laravel 12 · PostgreSQL 18 · Docker</p>
+        <video class="hero-media" src="../assets/projects_videos/fleetly_admin.mp4" autoplay muted loop playsinline aria-label="Demostración del panel de administración de Fleetly"></video>
       </div>
 
-      <!-- El proyecto -->
-      <article class="reveal mb-20">
-        <h2 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">El proyecto</h2>
-        <p class="text-accent-dim leading-relaxed mb-4">
-          Fleetly fue mi proyecto de final de grado superior. La idea era clara: construir una plataforma SaaS que cualquier empresa de flotas pudiera usar, desde una autoescuela hasta una flota de reparto. Cada cliente con su propio esquema de base de datos, su propio panel, su propia facturación.
-        </p>
-        <p class="text-accent-dim leading-relaxed">
-          Me encargué del desarrollo completo de los roles de <strong class="text-white">SuperAdmin (Central)</strong> y <strong class="text-white">Admin de Tenant</strong>, incluyendo el panel global de gestión de empresas, el sistema de planes y suscripciones, el control de acceso por roles (RBAC) y la integración de pagos con Stripe.
-        </p>
-      </article>
-
-      <!-- Características -->
-      <div class="reveal mb-20">
-        <h2 class="font-space text-2xl font-semibold mb-6 text-white border-b border-border pb-2">Características</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
-            <h3 class="font-space text-sm font-semibold text-white mb-1">Gestión de flota</h3>
-            <p class="text-muted text-sm leading-relaxed">Control de vehículos, conductores, reservas y mantenimiento desde un panel unificado.</p>
-          </div>
-          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
-            <h3 class="font-space text-sm font-semibold text-white mb-1">Seguimiento en tiempo real</h3>
-            <p class="text-muted text-sm leading-relaxed">Geolocalización y geofencing con polígonos nativos de PostgreSQL.</p>
-          </div>
-          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
-            <h3 class="font-space text-sm font-semibold text-white mb-1">RBAC por tenant</h3>
-            <p class="text-muted text-sm leading-relaxed">Roles y permisos independientes en cada tenant con Spatie, más un panel Central con control global.</p>
-          </div>
-          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
-            <h3 class="font-space text-sm font-semibold text-white mb-1">Chatbot por rol</h3>
-            <p class="text-muted text-sm leading-relaxed">Asistente potenciado por Gemini, con contexto adaptado al rol del usuario.</p>
-          </div>
-          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
-            <h3 class="font-space text-sm font-semibold text-white mb-1">Facturación + Stripe</h3>
-            <p class="text-muted text-sm leading-relaxed">Planes de suscripción, facturación automatizada y pasarela de pagos integrada.</p>
-          </div>
-          <div class="border border-border rounded-[10px] p-5 bg-[#0a0a0a]">
-            <h3 class="font-space text-sm font-semibold text-white mb-1">Multi-idioma</h3>
-            <p class="text-muted text-sm leading-relaxed">ES / EN / CA con vue-i18n. La interfaz se adapta al idioma del usuario.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Arquitectura -->
-      <article class="reveal mb-20">
-        <h2 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Arquitectura</h2>
-
-        <p class="text-accent-dim leading-relaxed mb-6">
-          El corazón de Fleetly es su modelo de <strong class="text-white">multi-tenancy con aislamiento por schema</strong>. Cada empresa cliente (tenant) opera en su propio schema de PostgreSQL, completamente aislado del resto. La plataforma Central gestiona los tenants desde el schema <code class="font-mono text-xs bg-[#1e1e1e] px-1.5 py-0.5 rounded">public</code>.
-        </p>
-
-        <div class="bg-[#0a0a0a] border border-border rounded-[10px] p-6 font-mono text-xs leading-relaxed overflow-x-auto mb-6">
-          <div class="text-faint mb-2">-- PostgreSQL: esquema multi-tenant</div>
-          <div class="text-[#4ade80] mb-1">schema <span class="text-white">public</span> (Central)</div>
-          <div class="pl-4 text-muted">├─ tenants, domains, plans</div>
-          <div class="pl-4 text-muted">├─ global_admins</div>
-          <div class="pl-4 text-muted">├─ tenant_branding, tenant_invoices</div>
-          <div class="pl-4 text-muted">└─ permissions, roles (Spatie)</div>
-          <div class="text-[#4ade80] mt-3 mb-1">schema <span class="text-white">tenant_1</span> (Acme Corp)</div>
-          <div class="pl-4 text-muted">├─ users, vehicles</div>
-          <div class="pl-4 text-muted">├─ bookings, payments</div>
-          <div class="pl-4 text-muted">├─ geofences, vehicle_locations</div>
-          <div class="pl-4 text-muted">├─ incidences, incidences_messages</div>
-          <div class="pl-4 text-muted">├─ invoices, maintenance</div>
-          <div class="pl-4 text-muted">└─ charging_stations</div>
-          <div class="text-[#4ade80] mt-3 mb-1">schema <span class="text-white">tenant_N</span> (...)</div>
-          <div class="pl-4 text-muted">└─ misma estructura aislada</div>
-        </div>
-
-        <p class="text-accent-dim leading-relaxed mb-4">
-          El backend está construido con <strong class="text-white">Laravel 12</strong> siguiendo una arquitectura modular. Cada dominio (Vehículos, Reservas, Incidencias, Geofencing...) es un módulo independiente con sus propios controladores, rutas, migraciones y modelos. La autenticación usa <strong class="text-white">Laravel Sanctum</strong> con tokens por tenant.
-        </p>
-
-        <p class="text-accent-dim leading-relaxed">
-          El frontend es una SPA con <strong class="text-white">Vue 3 + TypeScript + Vite</strong>, organizada también por módulos. Cada módulo tiene sus páginas, componentes, rutas y store. La comunicación en tiempo real usa <strong class="text-white">Laravel Reverb</strong> (WebSockets) para las actualizaciones en vivo de localización y notificaciones.
-        </p>
-      </article>
-
-      <!-- Paneles -->
-      <article class="reveal mb-20">
-        <h2 class="font-space text-2xl font-semibold mb-4 text-white border-b border-border pb-2">Paneles de administración</h2>
-
-        <div class="mb-10">
-          <h3 class="font-space text-lg font-semibold text-white mb-2">Panel SuperAdmin (Central)</h3>
-          <p class="text-accent-dim text-sm leading-relaxed mb-4">
-            El panel central desde el que se gestionan todos los tenants: crear empresas, asignar planes, ver estadísticas globales y monitorizar la plataforma. Cada tenant puede tener sus propios módulos habilitados (geofencing, estaciones de carga, etc.).
-          </p>
-          <div class="rounded-[10px] overflow-hidden border border-border">
-            <video src="../assets/projects_videos/fleetly_superadmin.mp4" autoplay muted loop playsinline class="w-full h-auto block"></video>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="font-space text-lg font-semibold text-white mb-2">Panel Admin (Tenant)</h3>
-          <p class="text-accent-dim text-sm leading-relaxed mb-4">
-            Cada empresa tiene su propio panel con usuarios, vehículos, reservas, incidencias y más. El branding es personalizable (logo, colores) y los permisos se configuran por rol dentro del tenant.
-          </p>
-          <div class="rounded-[10px] overflow-hidden border border-border">
-            <video src="../assets/projects_videos/fleetly_admin.mp4" autoplay muted loop playsinline class="w-full h-auto block"></video>
-          </div>
-        </div>
-      </article>
-
-      <!-- Stack -->
-      <div class="reveal mb-20">
-        <h2 class="font-space text-2xl font-semibold mb-6 text-white border-b border-border pb-2">Stack tecnológico</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div>
-            <h3 class="font-space text-sm font-semibold text-white mb-3 tracking-wide">Frontend</h3>
-            <ul class="space-y-2">
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Vue 3 + Composition API</li>
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>TypeScript</li>
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Vite + Tailwind CSS</li>
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Vue Router + Pinia (store)</li>
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>vue-i18n (ES / EN / CA)</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-space text-sm font-semibold text-white mb-3 tracking-wide">Backend</h3>
-            <ul class="space-y-2">
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Laravel 12 + PHP 8.4</li>
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>PostgreSQL 18 (multi-schema)</li>
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Redis + Laravel Reverb (WS)</li>
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Laravel Sanctum (auth)</li>
-              <li class="flex items-center gap-2 text-sm text-accent-dim"><span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>Spatie (RBAC) + Stripe</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- GitHub -->
-      <section class="bg-surface border border-border rounded-[10px] p-10 mb-14 reveal">
-        <h3 class="font-space text-2xl font-semibold mb-2 text-white">¿Quieres ver el código?</h3>
-        <p class="text-muted text-sm mb-6">El proyecto se organiza en dos repositorios independientes: frontend (Vue) y backend (Laravel).</p>
-        <div class="flex gap-4 flex-wrap">
-          <a href="https://github.com/SIMS-GRUP-4/sims-frontend" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] font-space text-sm font-medium no-underline transition-all duration-150 bg-white text-black hover:bg-accent-dim hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,255,255,0.15)]">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.57v-2c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.9 1.23 3.22 0 4.6-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.68.83.57C20.56 21.79 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Frontend (Vue + TS)
-          </a>
-          <a href="https://github.com/SIMS-GRUP-4/sims-backend" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] font-space text-sm font-medium no-underline transition-all duration-150 bg-white text-black hover:bg-accent-dim hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,255,255,0.15)]">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.57v-2c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.9 1.23 3.22 0 4.6-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.68.83.57C20.56 21.79 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            Backend (Laravel + PHP)
-          </a>
+      <section>
+        <h2>El proyecto</h2>
+        <div class="text">
+          <p>Fleetly fue mi proyecto final del grado superior. La idea: una plataforma SaaS que cualquier empresa con flota pudiera usar, desde una autoescuela hasta una empresa de reparto. Cada cliente con su propio esquema de base de datos, su propio panel y su propia facturación.</p>
+          <p>Me encargué del desarrollo completo de los roles de <strong>SuperAdmin (Central)</strong> y <strong>Admin de empresa</strong>: el panel global de gestión de empresas, el sistema de planes y suscripciones, el control de acceso por roles y la integración de pagos con Stripe.</p>
         </div>
       </section>
 
-    </div>
-  </section>
+      <section>
+        <h2>Características</h2>
+        <div class="features">
+          <div><h3>Gestión de flota</h3><p>Vehículos, conductores, reservas y mantenimiento desde un panel unificado.</p></div>
+          <div><h3>Seguimiento en tiempo real</h3><p>Geolocalización y geofencing con polígonos nativos de PostgreSQL.</p></div>
+          <div><h3>Roles por empresa</h3><p>Roles y permisos independientes en cada empresa con Spatie, más un panel central con control global.</p></div>
+          <div><h3>Chatbot por rol</h3><p>Asistente con Gemini, con el contexto adaptado al rol del usuario.</p></div>
+          <div><h3>Facturación y Stripe</h3><p>Planes de suscripción, facturación automatizada y pasarela de pagos integrada.</p></div>
+          <div><h3>Multi-idioma</h3><p>Castellano, inglés y catalán con vue-i18n.</p></div>
+        </div>
+      </section>
 
-  <footer class="border-t border-border py-4 text-center">
-    <div class="max-w-[860px] mx-auto px-8">
-      <p class="text-faint text-xs"><strong>Oriol Fibla Sancho</strong> · <span id="year"></span></p>
-    </div>
-  </footer>
+      <section>
+        <h2>Arquitectura</h2>
+        <div class="text">
+          <p>El corazón de Fleetly es el <strong>multi-tenancy con aislamiento por schema</strong>: cada empresa cliente opera en su propio schema de PostgreSQL, completamente aislado del resto. La plataforma central gestiona las empresas desde el schema <code>public</code>.</p>
+        </div>
+<pre class="diagram">schema <b>public</b> (central)
+├─ tenants, domains, plans
+├─ global_admins
+├─ tenant_branding, tenant_invoices
+└─ permissions, roles (Spatie)
+schema <b>tenant_1</b> (Acme Corp)
+├─ users, vehicles
+├─ bookings, payments
+├─ geofences, vehicle_locations
+├─ incidences, incidences_messages
+├─ invoices, maintenance
+└─ charging_stations
+schema <b>tenant_n</b> (…)
+└─ misma estructura, aislada</pre>
+        <div class="text">
+          <p>El backend usa <strong>Laravel 12</strong> con una arquitectura modular: cada dominio (vehículos, reservas, incidencias, geofencing…) es un módulo con sus propios controladores, rutas, migraciones y modelos. La autenticación usa <strong>Laravel Sanctum</strong> con tokens por empresa.</p>
+          <p>El frontend es una SPA con <strong>Vue 3 + TypeScript + Vite</strong>, organizada también por módulos. Las actualizaciones en vivo de localización y notificaciones van por WebSockets con <strong>Laravel Reverb</strong>.</p>
+        </div>
+      </section>
 
-  <script>
-    window.__logoSrc = '../assets/lambda.svg';
-    window.__logoHref = '../index.html#hero';
-    window.__navLinks = [
-      { href: '../index.html', text: 'Volver a Proyectos' }
-    ];
-  </script>
-  <script src="../shared.js"></script>
+      <section>
+        <h2>Paneles</h2>
+        <div class="panel">
+          <h3>Panel SuperAdmin (central)</h3>
+          <p>Desde aquí se gestionan todas las empresas: crearlas, asignarles un plan, ver estadísticas globales y activar los módulos de cada una (geofencing, estaciones de carga…).</p>
+          <video class="hero-media" src="../assets/projects_videos/fleetly_superadmin.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Demostración del panel SuperAdmin de Fleetly"></video>
+        </div>
+        <div class="panel">
+          <h3>Panel Admin (empresa)</h3>
+          <p>Cada empresa tiene su propio panel con usuarios, vehículos, reservas e incidencias. El logo y los colores son personalizables y los permisos se configuran por rol.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Stack</h2>
+        <div class="cols">
+          <div>
+            <h3>Frontend</h3>
+            <ul>
+              <li>Vue 3 + Composition API</li>
+              <li>TypeScript</li>
+              <li>Vite + Tailwind CSS</li>
+              <li>Vue Router + Pinia</li>
+              <li>vue-i18n (ES / EN / CA)</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Backend</h3>
+            <ul>
+              <li>Laravel 12 + PHP 8.4</li>
+              <li>PostgreSQL 18 (multi-schema)</li>
+              <li>Redis + Laravel Reverb</li>
+              <li>Laravel Sanctum</li>
+              <li>Spatie + Stripe</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="callout">
+        <h3>¿Quieres ver el código?</h3>
+        <p>El proyecto está en dos repositorios: <a class="go" href="https://github.com/SIMS-GRUP-4/sims-frontend">frontend (Vue)</a> y <a class="go" href="https://github.com/SIMS-GRUP-4/sims-backend">backend (Laravel)</a>.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">Oriol Fibla Sancho · <span id="year">2026</span></footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

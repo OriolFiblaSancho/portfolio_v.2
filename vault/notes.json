@@ -1,14 +1,16 @@
 {
-    "notes": [
-        {
-            "title": "Bitcoin - Funcionamiento y arquitectura",
-            "content": "./notes/BITCOIN.md",
-            "date": "17/06/2026"
-        },
-        {
-            "title": "BitTorrent - Introduccion al protocolo y a los private trackers",
-            "content": "./notes/TORRENT.md",
-            "date": "02/07/2026"
-        }
-    ]
+  "notes": [
+    {
+      "slug": "bittorrent",
+      "title": "BitTorrent: el protocolo y los private trackers",
+      "content": "./notes/TORRENT.md",
+      "date": "jul 2026"
+    },
+    {
+      "slug": "bitcoin",
+      "title": "Bitcoin: funcionamiento y arquitectura",
+      "content": "./notes/BITCOIN.md",
+      "date": "jun 2026"
+    }
+  ]
 }

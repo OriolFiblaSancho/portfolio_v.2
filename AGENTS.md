@@ -4,26 +4,19 @@ Static portfolio site deployed on **GitHub Pages** (`orifibla.dev`).
 
 ## Dev workflow
 
-No build tools, no dev server. Edit files, open in browser. Deploy by pushing to `main`.
+No build tools, no dependencies, no CDNs. Edit files, preview with `python3 -m http.server`, deploy by pushing to `main`.
 
-## Key dependencies
+## Structure
 
-- **Tailwind CSS** via CDN (`cdn.tailwindcss.com`) — configured inline in each HTML `<head>` with custom colors (`surface`, `border`, `accent-dim`, `muted`, `faint`) and fonts (`font-space`, `font-inter`)
-- **marked.js** via CDN (`cdn.jsdelivr.net/npm/marked/marked.min.js`) — renders markdown notes in vault
-- Fonts via `fonts.bunny.net` (Inter, Space Grotesk)
+- `index.html`: home page (hero, projects, experience, vault, freelance note, contact). The random quote list lives in its inline script.
+- `projects/*.html`: one detail page per project.
+- `vault/vault.html` + `vault/parser.js`: notes app. Lists `vault/notes.json` and renders the note in the URL hash (`vault.html#slug`) with the self-hosted `vault/marked.min.js`.
+- `vault/notes.json`: registry of notes (`slug`, `title`, `content` path, `date`). Adding a note = drop a `.md` in `vault/notes/` and add an entry here.
+- `site.css`: the only stylesheet, hand-written. Colours and fonts are CSS variables at the top.
+- `assets/fonts/`: self-hosted Schibsted Grotesk (SIL OFL, licence in `OFL.txt`).
 
-## Key structure
+## Conventions
 
-- `index.html` — main portfolio page; projects and experience inlined directly in HTML
-- `projects/*.html` — individual project detail pages
-- `vault/vault.html` — notes app; renders markdown files from `vault/notes/` via `marked.js`
-- `vault/notes.json` — registry of available notes (title, path, date)
-- `vault/parser.js` — fetches notes JSON and renders markdown content
-- `style.css` — only what Tailwind CDN cannot express (scroll reveal, markdown-body, project checkmarks, `prefers-reduced-motion`)
-- `shared.js` — nav build via `rebuildNav()`, year auto-update, scroll border, reveal observer
-- Nav border toggled via `.navbar-scrolled` class (JS adds on scroll > 20px)
-- `rebuildNav(extraLinks)` in `shared.js` rebuilds the nav from `window.__navLinks` + optional extra links — `parser.js` uses it to add a temporary "Vault" back button when viewing a note
-- `window.__navLinks` is declared in each page before loading `shared.js` — array of `{href, text, download?, id?}`
-- Every HTML page must include: `<link rel="icon" href="../favicon.ico">` (or `favicon.ico` at root), `<meta name="description">`, and the bunny.net font link
-- Tailwind config is duplicated in every HTML file — keep it consistent
-- `CNAME` file controls the GitHub Pages custom domain — do not delete
+- Spanish (Spain) for all visible text.
+- Every page links `site.css`, preloads the font, and includes the favicon and a `<meta name="description">`.
+- `CNAME` controls the GitHub Pages custom domain. Do not delete it.
